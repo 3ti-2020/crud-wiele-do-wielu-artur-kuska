@@ -9,7 +9,7 @@
 <body>
 
 
-    <header></header>
+    <header><h1>Artur Kuśka 4Ti gr 1</h1></header>
     <main>
     <?php
         $servername = "sql7.freemysqlhosting.net";
@@ -18,19 +18,17 @@
         $dbname = "sql7373164";
 
         $conn = new mysqli($servername, $username, $password, $dbname);
-        $result=$conn->query("SELECT * FROM `pozycje`");                    /*pozycje to nazwa widoku*/
+        $result=$conn->query("SELECT autor, tytul FROM lib_autor_tytul JOIN lib_tytul on lib_autor_tytul.id_tytul = lib_tytul.tytul JOIN lib_autor on lib_autor_tytul.id_autor = lib_autor.id_autor");
 
         echo("<table class='tabelka' border=1>");
             echo("<tr>
-            <th>ID</th>
             <th>Nazwisko</th>
             <th>Tytul</th>
             </tr>");
 
                 while($row=$result->fetch_assoc() ){
                     echo("<tr>");
-                    echo("<td>".$row['id_book']."</td>");
-                    echo("<td>".$row['nazwisko']."</td>");
+                    echo("<td>".$row['autor']."</td>");
                     echo("<td>".$row['tytul']."</td>");
                     echo("</tr>");
                 }
@@ -39,6 +37,12 @@
 
 ?>
 </main>
+
+<nav>
+
+
+</nav>
+
 <footer></footer>
 </body>
 <script src="main.js"></script>

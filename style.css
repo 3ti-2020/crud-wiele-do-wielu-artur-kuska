@@ -45,13 +45,30 @@ footer{
     background-color: pink;
 }
 
-.tabelka{
-    border-collapse: collapse;
+.tab{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-th, tr{
+.tabelka{
+    border-collapse: collapse;
+    text-align: center;
+    border: solid 2px white;
+}
+
+tr, th{
     background-color: black;
     color: white;
+    height: 50px;
+    width: 100px;
+}
+
+.lp{
+    width: 50px;
+    height: 50px;
 }
 
 tr:hover{

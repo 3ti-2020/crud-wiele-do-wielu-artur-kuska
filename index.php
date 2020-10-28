@@ -12,10 +12,10 @@
     <header></header>
     <main>
     <?php
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "library";
+        $servername = "sql7.freemysqlhosting.net";
+        $username = "sql7373164";
+        $password = "XblNhVncck";
+        $dbname = "sql7373164";
 
         $conn = new mysqli($servername, $username, $password, $dbname);
         $result=$conn->query("SELECT * FROM `pozycje`");                    /*pozycje to nazwa widoku*/

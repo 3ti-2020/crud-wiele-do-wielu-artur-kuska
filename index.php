@@ -9,7 +9,7 @@
 <body>
 
 
-    <header><h1>Artur Kuśka 4Ti gr 1</h1></header>
+    <header><h1>Artur Kuśka 4Ti gr1 nr7</h1></header>
     <main>
         <div class="tab">
         <?php
@@ -53,7 +53,7 @@
     
     <form action="Tinsert.php" method="post" class="ins">
         <input class="srodek styleins" type="text" name="tytul" id="tytul" placeholder="tytul">
-        <input class='styleins' type="submit" value="Dodaj tytul">
+        <input class="styleins" type="submit" value="Dodaj tytul">
     </form>
 
     <?php
@@ -63,10 +63,25 @@
         $dbname = "sql7373164";
 
         $conn = new mysqli($servername, $username, $password, $dbname);
-        $result = $conn->query("SELECT * FROM  lib_autor");
-        
-        
+        $res = $conn->query("SELECT * FROM  lib_autor");
+        $res2 = $conn->query("SELECT * FROM  lib_tytul");
 
+        echo('<form action="insert.php" method="post" class="ins">
+        <select  class="styleins" name="wybranya">');
+        while($row=$res->fetch_assoc()){
+            echo("<option class='styleins' value='".$row['id_autor']."'>".$row['autor']."</option>");
+        }
+
+        echo("</select>");
+
+        echo('<select  class="styleins" name="wybranyt">');
+        while($row2=$res2->fetch_assoc()){
+            echo("<option class='styleins' value='".$row2['id_tytul']."'>".$row2['tytul']."</option>");
+        }
+        echo("</select>");
+
+        echo('<input class="styleins" type="submit" value="Dodaj tytul">
+        </form>');
 
     ?>
 

@@ -63,7 +63,7 @@ tr, th{
     background-color: black;
     color: white;
     height: 50px;
-    width: 100px;
+    width: 120px;
 }
 
 .lp{
@@ -75,4 +75,33 @@ tr:hover{
     background-color: white;
     color: black;
     font-weight: bold; 
+}
+
+.formularze{
+    height: 80%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.ins{
+    height: 50%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.srodek{
+    text-align: center;
+}
+
+.styleins{
+    width: 50%;
+    height: 20%;
 }

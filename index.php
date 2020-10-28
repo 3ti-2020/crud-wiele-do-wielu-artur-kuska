@@ -44,6 +44,34 @@
 
 <nav>
 
+<div class="formularze">
+
+    <form action="Ainsert.php" method="post" class="ins">
+        <input class="srodek styleins" type="text" name="autor" id="autor" placeholder="autor">
+        <input class='styleins' type="submit" value="Dodaj autora">
+    </form>
+    
+    <form action="Tinsert.php" method="post" class="ins">
+        <input class="srodek styleins" type="text" name="tytul" id="tytul" placeholder="tytul">
+        <input class='styleins' type="submit" value="Dodaj tytul">
+    </form>
+
+    <?php
+        $servername = "sql7.freemysqlhosting.net";
+        $username = "sql7373164";
+        $password = "XblNhVncck";
+        $dbname = "sql7373164";
+
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        $result = $conn->query("SELECT * FROM  lib_autor");
+        
+        
+
+
+    ?>
+
+</div>
+
 
 
 </nav>

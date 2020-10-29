@@ -53,54 +53,7 @@
 
 <nav>
 
-<div class="formularze">
 
-    <form action="Ainsert.php" method="post" class="ins">
-        <input class="srodek styleins" type="text" name="autor" id="autor" placeholder="autor">
-        <input class='styleins' type="submit" value="Dodaj autora">
-    </form>
-    
-    <form action="Tinsert.php" method="post" class="ins">
-        <input class="srodek styleins" type="text" name="tytul" id="tytul" placeholder="tytul">
-        <input class="styleins" type="submit" value="Dodaj tytul">
-    </form>
-
-    <?php
-        $servername = "sql7.freemysqlhosting.net";
-        $username = "sql7373164";
-        $password = "XblNhVncck";
-        $dbname = "sql7373164";
-
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        $res = $conn->query("SELECT * FROM  lib_autor");
-        $res2 = $conn->query("SELECT * FROM  lib_tytul");
-
-        echo('<form action="insert.php" method="post" class="ins">
-        <select  class="styleins" name="wybranya">');
-        while($row=$res->fetch_assoc()){
-            echo("<option class='styleins' value='".$row['id_autor']."'>".$row['autor']."</option>");
-        }
-
-        echo("</select>");
-
-        echo('<select  class="styleins" name="wybranyt">');
-        while($row2=$res2->fetch_assoc()){
-            echo("<option class='styleins' value='".$row2['id_tytul']."'>".$row2['tytul']."</option>");
-        }
-        echo("</select>");
-
-        echo('<input class="styleins" type="submit" value="Dodaj tytul">
-        </form>');
-
-    ?>
-
-</div>
-
-
-
-</nav>
-
-<footer>
     
     <div class="polaczone">
         <form action="ALLins.php" method="post" class="allins">
@@ -135,7 +88,10 @@
     </form>
             </div>
 
-</footer>
+
+</nav>
+
+<footer></footer>
 </body>
 <script src="main.js"></script>
 </html>

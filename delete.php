@@ -6,7 +6,7 @@
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
-    $sql= "INSERT INTO `lib_autor_tytul`(`id_autor`, `id_tytul`) VALUES ('".$_POST['wybranya']."','".$_POST['wybranyt']."')";
+    $sql= "DELETE FROM `lib_autor_tytul` WHERE id_autor_tytul='".$_POST['del']."'";
 
     mysqli_query($conn, $sql);
 

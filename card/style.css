@@ -13,8 +13,8 @@
 }
 
 .pwr{
-    height: 10vh;
-    width: 10vw;
+    height: 50px;
+    width: 100px;
     background-color: darkslateblue;
     display: flex;
     justify-content: center;

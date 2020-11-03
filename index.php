@@ -61,39 +61,39 @@
             <input class="ains" type="text" name="aTyt" placeholder="Tytul">
             <input class="ains" type="submit" value="Dodaj parę">
             <input class="ains" type="reset" value="Usuń dane">
-    <?php
-        $servername = "sql7.freemysqlhosting.net";
-        $username = "sql7373164";
-        $password = "XblNhVncck";
-        $dbname = "sql7373164";
+            <?php
+                $servername = "sql7.freemysqlhosting.net";
+                $username = "sql7373164";
+                $password = "XblNhVncck";
+                $dbname = "sql7373164";
 
-        $conn = new mysqli($servername, $username, $password, $dbname);
+                $conn = new mysqli($servername, $username, $password, $dbname);
 
-        $res  = $conn->query("SELECT id_autor as id FROM  lib_autor order by id_autor DESC");
-        $res2 = $conn->query("SELECT id_tytul as id FROM  lib_tytul order by id_tytul DESC");
+                $res  = $conn->query("SELECT id_autor as id FROM  lib_autor order by id_autor DESC");
+                $res2 = $conn->query("SELECT id_tytul as id FROM  lib_tytul order by id_tytul DESC");
 
-            echo('<select class="sel" name="vAutor">');
-            while($row=$res->fetch_assoc()){
-                echo('<option class="sel" value="'.($row['id']+1).'">'.$row['id'].'</option>');
-            }
-            
-            echo('</select>');
+                    echo('<select class="sel" name="vAutor">');
+                    while($row=$res->fetch_assoc()){
+                        echo('<option class="sel" value="'.($row['id']+1).'">'.$row['id'].'</option>');
+                    }
+                    
+                    echo('</select>');
 
-            echo('<select class="sel" name="vTyt">');
-                while($row=$res2->fetch_assoc()){
-                    echo('<option class="sel" value="'.($row['id']+1).'">'.$row['id'].'</option>');
-                }
-            echo('</select>');
-    ?>
-    </form>
-            </div>
+                    echo('<select class="sel" name="vTyt">');
+                        while($row=$res2->fetch_assoc()){
+                            echo('<option class="sel" value="'.($row['id']+1).'">'.$row['id'].'</option>');
+                        }
+                    echo('</select>');
+            ?>
+        </form>
+    </div>
 
 
 </nav>
 
 <footer>
-    
-    <p>Jeżeli insert po prawej stronie nie jest wyśrodkowany należy kliknąć ctrl+f5.<br>Problem jest najprawdopodobniej po stornie heroku i nie zarwsze wyświetla sie strona poprawnie.</p>
+
+    <a class='linkcard' href="./card/index.php"><div class="karty">Karty</div></a>
     
 </footer>
 </body>

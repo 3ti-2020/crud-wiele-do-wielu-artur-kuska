@@ -128,8 +128,8 @@ footer{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 25%;
-    width: 50%;
+    height: 50%;
+    width: 100%;
 }
 
 .ains{
@@ -140,4 +140,21 @@ footer{
 
 .sel{
     display: none;
+}
+
+.karty{
+    height: 50px;
+    width: 100px;
+    background-color: darkslateblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: large;
+    color: darkorange;
+    font-weight: 600;
+}
+
+.linkcard{
+    text-decoration: none;
 }

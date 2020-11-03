@@ -92,7 +92,7 @@
 </nav>
 
 <footer>
-
+    
     <p>Jeżeli insert po prawej stronie nie jest wyśrodkowany należy kliknąć ctrl+f5.<br>Problem jest najprawdopodobniej po stornie heroku i nie zarwsze wyświetla sie strona poprawnie.</p>
     
 </footer>

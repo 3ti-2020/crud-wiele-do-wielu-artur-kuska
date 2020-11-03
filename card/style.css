@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.a{
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-color: rgba(2,0,36,1);
+}
+
+.pwr{
+    height: 10vh;
+    width: 10vw;
+    background-color: darkslateblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: large;
+    color: darkorange;
+    font-weight: 600;
+}
+
+.linkcard{
+    text-decoration: none;
+}
+
+.all{
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient( rgba(2,0,36,1) , rgba(9,9,121,1) , rgba(0,212,255,1));
+}
+
+.zestaw{
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#tresc{
+    font-size: large;
+    opacity: 1.0;
+}
+
+.pokaz{
+    display: block;
+    width: 70%;
+}
+
+.schowaj{
+    display: none;
+}
+
+.conc{
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.conc2{
+    display: flex;
+    font-weight: 700;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.conc3{
+    display: flex;
+    font-weight: 700;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.karta{
+    height: 70%;
+    width: 20%;
+    display: flex;
+    justify-items: center;
+    align-items: flex-end;
+    text-align: center;
+    color: white;
+    background-image: url(https://www.elisascience.org/files/styles/keyimage/public/images/M31_Spiral_Galaxy.jpg?itok=Jo_1T4c9);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 1px 1px 3px 3px;
+}
+
+.karta2{
+    height: 70%;
+    width: 20%;
+    display: flex;
+    justify-items: center;
+    align-items: flex-end;
+    text-align: center;
+    color: white;
+    background-image: url(https://www.e-oprawa.pl/media/PL/img/galeria/580x360/16537.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 1px 1px 3px 3px;
+}
+
+.tit1{
+    color: white;
+}
+
+.op{
+    color: black;
+    font-weight: bold;
+}
+
+.karta3{
+    height: 70%;
+    width: 20%;
+    display: flex;
+    justify-items: center;
+    align-items: flex-end;
+    text-align: center;
+    color: white;
+    background-image: url(https://images.unsplash.com/photo-1565073182887-6bcefbe225b1?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 1px 1px 3px 3px;
+}
+
+.prz{
+    height: 45%;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20%;
+}
+
+.tresc{
+    color: black;
+    font-weight: 700;
+    font-size: large;
+}
+
+@keyframes wej {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+    }
+}
+
+
+@keyframes wyj {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+    }
+    100% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+    }
+}
+
+@keyframes kolor {
+    0%{
+        filter: hue-rotate(0deg);
+    }
+
+    25%{
+        filter: hue-rotate(22.5deg);
+    }
+
+    50%{
+        filter: hue-rotate(45deg);
+    }
+
+    75%{
+        filter: hue-rotate(67.5deg);
+    }
+
+    100%{
+        filter: hue-rotate(90deg);
+    }
+}
+
+@keyframes rolok {
+    0%{
+        filter: hue-rotate(90deg);
+    }
+
+    25%{
+        filter: hue-rotate(67.5deg);
+    }
+
+    50%{
+        filter: hue-rotate(45deg);
+    }
+
+    75%{
+        filter: hue-rotate(22.5deg);
+    }
+
+    100%{
+        filter: hue-rotate(0deg);
+    }
+}

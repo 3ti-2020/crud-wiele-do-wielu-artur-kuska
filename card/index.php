@@ -5,9 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cards</title>
     <link rel="stylesheet" href="style.css">
+
+
+        
+
+
 </head>
 <body>
-
+    <div class="a">
+        <a  href="./../index.php" class="linkcard">
+        <div class="pwr">Powrót</div>
+        </a>
+    </div>
+    
     <div class="all">
 
         <div class="zestaw">

@@ -10,7 +10,7 @@
 
     mysqli_query($conn, $sql);
 
-    // header("location:http://artur-kuska-wdw.herokuapp.com/");
+    header("location:http://artur-kuska-wdw.herokuapp.com/");
 
-    header("location:http://localhost/strona/");
+    //header("location:http://localhost/strona/");
 ?>

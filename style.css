@@ -128,8 +128,8 @@ footer{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 25%;
-    width: 50%;
+    height: 50%;
+    width: 100%;
 }
 
 .ains{
@@ -157,4 +157,9 @@ footer{
 
 .linkcard{
     text-decoration: none;
+}
+
+.zdj{
+    height: 100%;
+    width: 100%;
 }

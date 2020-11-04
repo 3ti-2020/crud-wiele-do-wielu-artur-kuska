@@ -16,13 +16,13 @@
     <main>
         <div class="tab">
         <?php
-            $servername = "sql7.freemysqlhosting.net";
-            $username = "sql7373164";
-            $password = "XblNhVncck";
-            $dbname = "sql7373164";
+            $servername = "remotemysql.com";
+            $username = "EItVVUd8zl";
+            $password = "MadGhgwbbw";
+            $dbname = "EItVVUd8zl";
 
             $conn = new mysqli($servername, $username, $password, $dbname);
-            $result = $conn->query("SELECT lib_autor_tytul.id_autor_tytul as id, lib_autor.autor, lib_tytul.tytul FROM lib_autor_tytul JOIN lib_tytul on lib_autor_tytul.id_tytul = lib_tytul.id_tytul JOIN lib_autor on lib_autor_tytul.id_autor = lib_autor.id_autor order by id asc");
+            $result = $conn->query("SELECT lib_autor_tytul.id_autor_tytul as id, lib_autor.autor, lib_tytul.tytul FROM lib_autor_tytul JOIN lib_tytul on lib_autor_tytul.id_tytul = lib_tytul.id_tytul JOIN lib_autor on lib_autor_tytul.id_autor = lib_autor.id_autor order by id asc") or die($conn->error);
 
             echo("<table class='tabelka' border=1>");
                 echo("<tr>
@@ -62,10 +62,10 @@
             <input class="ains" type="submit" value="Dodaj parę">
             <input class="ains" type="reset" value="Usuń dane">
             <?php
-                $servername = "sql7.freemysqlhosting.net";
-                $username = "sql7373164";
-                $password = "XblNhVncck";
-                $dbname = "sql7373164";
+                $servername = "remotemysql.com";
+                $username = "EItVVUd8zl";
+                $password = "MadGhgwbbw";
+                $dbname = "EItVVUd8zl";
 
                 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -93,9 +93,9 @@
 
 <footer>
 
+    <a class='linkcard' class='zdj' target="_blank" href="https://github.com/3ti-2020/crud-wiele-do-wielu-artur-kuska"><img src="http://pngimg.com/uploads/github/github_PNG42.png" alt><a>
     <a class='linkcard' href="./card/index.php"><div class="karty">Karty</div></a>
     
 </footer>
 </body>
-<script src="main.js"></script>
 </html>

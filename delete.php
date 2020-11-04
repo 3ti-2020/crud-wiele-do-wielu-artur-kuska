@@ -1,8 +1,8 @@
 <?php
-    $servername = "sql7.freemysqlhosting.net";
-    $username = "sql7373164";
-    $password = "XblNhVncck";
-    $dbname = "sql7373164";
+    $servername = "remotemysql.com";
+    $username = "EItVVUd8zl";
+    $password = "MadGhgwbbw";
+    $dbname = "EItVVUd8zl";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -10,7 +10,7 @@
 
     mysqli_query($conn, $sql);
 
-    header("location:http://artur-kuska-wdw.herokuapp.com/");
+    // header("location:http://artur-kuska-wdw.herokuapp.com/");
 
-    // header("location:http://localhost/strona/");
+    header("location:http://localhost/strona/");
 ?>

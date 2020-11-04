@@ -156,10 +156,11 @@ footer{
 }
 
 .linkcard{
+    margin-left: 10%;
     text-decoration: none;
 }
 
 .zdj{
-    height: 100%;
-    width: 100%;
+    height: 50px;
+    width: 50px;
 }

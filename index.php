@@ -93,7 +93,7 @@
 
 <footer>
 
-    <a class='linkcard' class='zdj' target="_blank" href="https://github.com/3ti-2020/crud-wiele-do-wielu-artur-kuska"><img src="http://pngimg.com/uploads/github/github_PNG42.png" alt><a>
+    <a class='linkcard' target="_blank" href="https://github.com/3ti-2020/crud-wiele-do-wielu-artur-kuska"><img class='zdj' src="http://pngimg.com/uploads/github/github_PNG42.png" alt><a>
     <a class='linkcard' href="./card/index.php"><div class="karty">Karty</div></a>
     
 </footer>

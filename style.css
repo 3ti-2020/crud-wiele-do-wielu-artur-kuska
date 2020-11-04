@@ -27,6 +27,26 @@ header{
     background-color: pink;
 }
 
+.zz{
+    width: 5%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: center;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.ma{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 main{
     grid-area: b;
     display: flex;
@@ -156,7 +176,6 @@ footer{
 }
 
 .linkcard{
-    margin-left: 10%;
     text-decoration: none;
 }
 

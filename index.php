@@ -5,11 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wiele do wielu</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
 
+   
     <header>
-    <h1>Artur Kuśka 4Ti gr1 nr7</h1>
+    <div class="zz">
+        <a href="https://github.com/3ti-2020/crud-wiele-do-wielu-artur-kuska"><img class='zdj' src="http://pngimg.com/uploads/github/github_PNG42.png"></a>
+    </div>
+
+    <div class="ma">
+        <h1>Artur Kuśka 4Ti gr1 nr7</h1>
+        </div>
+
+    <div class="zz"></div>
+    
     </header>
 
 
@@ -92,8 +103,7 @@
 </nav>
 
 <footer>
-
-    <a class='linkcard' target="_blank" href="https://github.com/3ti-2020/crud-wiele-do-wielu-artur-kuska"><img class='zdj' src="http://pngimg.com/uploads/github/github_PNG42.png" alt><a>
+    
     <a class='linkcard' href="./card/index.php"><div class="karty">Karty</div></a>
     
 </footer>

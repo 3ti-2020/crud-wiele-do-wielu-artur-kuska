@@ -78,7 +78,7 @@
 
                 $conn = new mysqli($servername, $username, $password, $dbname);
 
-                $conn->set_charset('utf-8')
+                $conn->set_charset('utf-8');
 
                 $res  = $conn->query("SELECT id_autor as id FROM  lib_autor order by id_autor DESC");
                 $res2 = $conn->query("SELECT id_tytul as id FROM  lib_tytul order by id_tytul DESC");

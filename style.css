@@ -11,7 +11,7 @@ body{
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-gap: 5px;
-    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 5fr 1fr;
     grid-template-areas: 
     "a a"
     "b d"
@@ -154,8 +154,9 @@ footer{
 
 .ains{
     text-align: center;
-    height: 20%;
-    width: 80%;
+    height: 15%;
+    width: 40%;
+    margin: 1%;
 }
 
 .sel{

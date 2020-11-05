@@ -37,7 +37,6 @@
 
             echo("<table class='tabelka' border=1>");
                 echo("<tr>
-                <th class='lp'>ID</th>
                 <th>Nazwisko</th>
                 <th>Tytul</th>
                 <th class='lp'>Usun</th>
@@ -45,7 +44,6 @@
 
                 while($row=$result->fetch_assoc() ){
                     echo("<tr>");
-                    echo("<td>".$row['id']."</td>");
                     echo("<td>".$row['autor']."</td>");
                     echo("<td>".$row['tytul']."</td>");
                     echo("<td>
@@ -67,7 +65,7 @@
 
     
     <div class="polaczone">
-        <form action="ALLins.php" method="post" class="allins">
+        <form action="ALLinsert.php" method="post" class="allins">
             <input class="ains" type="text" name="aAutor" placeholder="Autor">
             <input class="ains" type="text" name="aTyt" placeholder="Tytul">
             <input class="ains" type="submit" value="Dodaj parę">
@@ -79,6 +77,8 @@
                 $dbname = "EItVVUd8zl";
 
                 $conn = new mysqli($servername, $username, $password, $dbname);
+
+                $conn->set_charset('utf-8')
 
                 $res  = $conn->query("SELECT id_autor as id FROM  lib_autor order by id_autor DESC");
                 $res2 = $conn->query("SELECT id_tytul as id FROM  lib_tytul order by id_tytul DESC");

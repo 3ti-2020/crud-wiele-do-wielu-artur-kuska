@@ -65,45 +65,58 @@
 
     
     <div class="polaczone">
-        <form action="ALLinsert.php" method="post" class="allins">
-            <input class="ains" type="text" name="aAutor" placeholder="Autor">
-            <input class="ains" type="text" name="aTyt" placeholder="Tytul">
-            <input class="ains" type="submit" value="Dodaj parę">
-            <input class="ains" type="reset" value="Usuń dane">
+        <?php
+            session_start();
+            if(isset($_SESSION['zalogowano'])){
+        ?>
+                <form action="ALLinsert.php" method="post" class="allins">
+                    <input class="ains" type="text" name="aAutor" placeholder="Autor">
+                    <input class="ains" type="text" name="aTyt" placeholder="Tytul">
+                    <input class="ains" type="submit" value="Dodaj parę">
+                    <input class="ains" type="reset" value="Usuń dane">
+                    <?php
+                        $servername = "remotemysql.com";
+                        $username = "EItVVUd8zl";
+                        $password = "MadGhgwbbw";
+                        $dbname = "EItVVUd8zl";
+
+                        $conn = new mysqli($servername, $username, $password, $dbname);
+
+                        $conn->set_charset('utf-8');
+
+                        $res  = $conn->query("SELECT id_autor as id FROM  lib_autor order by id_autor DESC");
+                        $res2 = $conn->query("SELECT id_tytul as id FROM  lib_tytul order by id_tytul DESC");
+
+                            echo('<select class="sel" name="vAutor">');
+                            while($row=$res->fetch_assoc()){
+                                echo('<option class="sel" value="'.($row['id']+1).'">'.$row['id'].'</option>');
+                            }
+                            
+                            echo('</select>');
+
+                            echo('<select class="sel" name="vTyt">');
+                                while($row=$res2->fetch_assoc()){
+                                    echo('<option class="sel" value="'.($row['id']+1).'">'.$row['id'].'</option>');
+                                }
+                            echo('</select>');
+                    ?>
+                </form>
             <?php
-                $servername = "remotemysql.com";
-                $username = "EItVVUd8zl";
-                $password = "MadGhgwbbw";
-                $dbname = "EItVVUd8zl";
-
-                $conn = new mysqli($servername, $username, $password, $dbname);
-
-                $conn->set_charset('utf-8');
-
-                $res  = $conn->query("SELECT id_autor as id FROM  lib_autor order by id_autor DESC");
-                $res2 = $conn->query("SELECT id_tytul as id FROM  lib_tytul order by id_tytul DESC");
-
-                    echo('<select class="sel" name="vAutor">');
-                    while($row=$res->fetch_assoc()){
-                        echo('<option class="sel" value="'.($row['id']+1).'">'.$row['id'].'</option>');
-                    }
-                    
-                    echo('</select>');
-
-                    echo('<select class="sel" name="vTyt">');
-                        while($row=$res2->fetch_assoc()){
-                            echo('<option class="sel" value="'.($row['id']+1).'">'.$row['id'].'</option>');
-                        }
-                    echo('</select>');
-            ?>
-        </form>
+            }else{
+                echo("<div class='zal'><a class='baza' href='./logowanie/logowanie.php'>Tylko zalogowani użytkownicy mogą edytować bazę danych</a></div>");
+            }
+        ?>
+        
     </div>
+
+    
 
 
 </nav>
 
 <footer>
     
+    <a class='linkcard' href="./logowanie/logowanie.php"><div class="karty">Logowanie</div></a>
     <a class='linkcard' href="./card/index.php"><div class="karty">Karty</div></a>
     
 </footer>

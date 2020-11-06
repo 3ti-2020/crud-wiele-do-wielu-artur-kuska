@@ -16,7 +16,5 @@
 
     mysqli_query($conn, $sqlIN);
 
-    header("location:http://artur-kuska-wdw.herokuapp.com/");
-
-    // header("location:http://localhost/strona/");
+    header("location:index.php");
 ?>

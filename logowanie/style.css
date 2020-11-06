@@ -1,0 +1,205 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: aqua;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 5px;
+    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-areas: 
+    "a a"
+    "b d"
+    "c c";
+}
+
+header{
+    grid-area: a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: pink;
+}
+
+.zz{
+    width: 5%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: center;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.ma{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+main{
+    grid-area: b;
+    display: flex;
+    background-color: pink;
+    justify-content: center;
+    align-items: center;
+}
+
+nav{
+    height: 100%;
+    width: 100%;
+    grid-area: d;
+    background-color: pink;
+}
+
+footer{
+    grid-area: c;
+    background-color: pink;
+}
+
+.tab{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabelka{
+    border-collapse: collapse;
+    text-align: center;
+    border: solid 2px white;
+}
+
+tr, th{
+    background-color: black;
+    color: white;
+    height: 50px;
+    width: 120px;
+}
+
+.lp{
+    width: 50px;
+    height: 50px;
+}
+
+tr:hover{
+    background-color: white;
+    color: black;
+    font-weight: bold; 
+}
+
+.formularze{
+    height: 80%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.ins{
+    height: 50%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.srodek{
+    text-align: center;
+}
+
+.styleins{
+    width: 50%;
+    height: 25px;
+}
+
+footer{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.polaczone{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.allins{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 50%;
+    width: 100%;
+}
+
+.ains{
+    text-align: center;
+    height: 15%;
+    width: 40%;
+    margin: 1%;
+}
+
+.sel{
+    display: none;
+}
+
+.karty{
+    height: 50px;
+    margin: 2rem;
+    width: 100px;
+    background-color: darkslateblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: large;
+    color: darkorange;
+    font-weight: 600;
+}
+
+.linkcard{
+    text-decoration: none;
+}
+
+.zdj{
+    height: 50px;
+    width: 50px;
+}
+
+.zal{
+    height: 50%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 800;
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+.baza{
+    text-decoration: underline;
+    color: black;
+}

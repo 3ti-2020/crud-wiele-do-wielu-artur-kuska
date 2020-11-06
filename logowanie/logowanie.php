@@ -116,7 +116,8 @@
 
 <footer>
     
-    <a class='linkcard' href="./card/index.php"><div class="karty">Karty</div></a>
+    <a class='linkcard' href="./../index.php"><div class="karty">Logowanie</div></a>
+    <a class='linkcard' href="./../card/index.php"><div class="karty">Karty</div></a>
     
 </footer>
 </body>

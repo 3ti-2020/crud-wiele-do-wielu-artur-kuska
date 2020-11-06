@@ -19,7 +19,17 @@
         <h1>Artur Kuśka 4Ti gr1 nr7</h1>
         </div>
 
-    <div class="zz"></div>
+    <div class="zz prawo">
+            <?php
+            session_start();
+                if(isset($_SESSION['zalogowano'])){
+                }
+                ?>
+                <form action="uwierzytelnie.php" method="get">
+                <input type="hidden" name="akcja" value="wyloguj">
+                <input type="submit" value="wyloguj">
+            </form>
+    </div>
     
     </header>
 
@@ -38,20 +48,27 @@
             echo("<table class='tabelka' border=1>");
                 echo("<tr>
                 <th>Nazwisko</th>
-                <th>Tytul</th>
-                <th class='lp'>Usun</th>
-                </tr>");
+                <th>Tytul</th>");
+                if(isset($_SESSION['zalogowano'])){
+                    echo("<th class='lp'>Usun</th>");
+                }
+                echo("</tr>");
 
                 while($row=$result->fetch_assoc() ){
                     echo("<tr>");
                     echo("<td>".$row['autor']."</td>");
                     echo("<td>".$row['tytul']."</td>");
-                    echo("<td>
-                            <form action='delete.php' method='post'>
-                                <input type='hidden' name='del' value='".$row['id']."'>
-                                <input type='submit' value='Usuń'>
-                            </form>
-                    </td>");
+                    
+                ?>
+                <?php
+                    if(isset($_SESSION['zalogowano'])){
+                        echo("<td>
+                                <form action='delete.php' method='post'>
+                                    <input type='hidden' name='del' value='".$row['id']."'>
+                                    <input type='submit' value='Usuń'>
+                                </form>
+                        </td>");
+                    }
                     echo("</tr>");
                 }
 
@@ -61,12 +78,9 @@
 </main>
 
 <nav>
-
-
     
     <div class="polaczone">
         <?php
-            session_start();
             if(isset($_SESSION['zalogowano'])){
         ?>
                 <form action="ALLinsert.php" method="post" class="allins">

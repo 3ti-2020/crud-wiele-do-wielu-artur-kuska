@@ -35,11 +35,29 @@ header{
     align-items: flex-start;
     text-align: center;
     margin-left: 10px;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
-.prawo{
-    
+.yy{
+    width: 5%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: center;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+
+.prg{
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    margin: 2px;
+    border: none;
+    background-color: rgb(11, 96, 167);
+    color: whitesmoke;
+    font-weight: 600;
 }
 
 .ma{

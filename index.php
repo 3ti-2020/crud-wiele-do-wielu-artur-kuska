@@ -19,7 +19,7 @@
         <h1>Artur Kuśka 4Ti gr1 nr7</h1>
         </div>
 
-    <div class="zz prawo">
+    <div class="yy">
             <?php
             session_start();
                 if(isset($_SESSION['zalogowano'])){
@@ -27,7 +27,7 @@
                 ?>
                 <form action="uwierzytelnie.php" method="get">
                 <input type="hidden" name="akcja" value="wyloguj">
-                <input type="submit" value="wyloguj">
+                <input class="prg" type="submit" value="wyloguj">
             </form>
     </div>
     

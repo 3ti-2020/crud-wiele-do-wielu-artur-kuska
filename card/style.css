@@ -17,13 +17,13 @@
     margin-left: -15%;
     height: 50px;
     width: 100px;
-    background-color: darkslateblue;
+    background-color: rgb(11, 96, 167);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-size: large;
-    color: darkorange;
+    color: whitesmoke;
     font-weight: 600;
 }
 

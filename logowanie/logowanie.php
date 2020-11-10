@@ -21,7 +21,7 @@
             <div class="yy">
             <?php
             session_start();
-                if(isset($_SESSION['zalogowano'])){
+                if(isset($_SESSION['zalogowano_a'])){
                 }
                 ?>
                 <form action="uwierzytelnie.php" method="get">
@@ -37,7 +37,9 @@
 
     <div class="all">
         <?php
-            if(!isset($_SESSION['zalogowano'])){
+            $a = !isset($_SESSION['zalogowano_a']);
+            $u = !isset($_SESSION['zalogowano_u']);
+            if($a or $u){
         ?>
 
         <form action="uwierzytelnie.php" method="post" class="zaloguj">

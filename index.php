@@ -22,13 +22,16 @@
     <div class="yy">
             <?php
             session_start();
-                if(isset($_SESSION['zalogowano'])){
-                }
+            $a = isset($_SESSION['zalogowano_a']);
+                if($a){
                 ?>
                 <form action="uwierzytelnie.php" method="get">
                 <input type="hidden" name="akcja" value="wyloguj">
                 <input class="prg" type="submit" value="wyloguj">
             </form>
+            <?php
+                }
+            ?>
     </div>
     
     </header>
@@ -49,7 +52,7 @@
                 echo("<tr>
                 <th>Nazwisko</th>
                 <th>Tytul</th>");
-                if(isset($_SESSION['zalogowano'])){
+                if($a){
                     echo("<th class='lp'>Usun</th>");
                 }
                 echo("</tr>");
@@ -59,13 +62,11 @@
                     echo("<td>".$row['autor']."</td>");
                     echo("<td>".$row['tytul']."</td>");
                     
-                ?>
-                <?php
-                    if(isset($_SESSION['zalogowano'])){
+                    if($a){
                         echo("<td>
                                 <form action='delete.php' method='post'>
                                     <input type='hidden' name='del' value='".$row['id']."'>
-                                    <input type='submit' value='Usuń'>
+                                    <input class='dilit' type='submit' value='Usuń'>
                                 </form>
                         </td>");
                     }
@@ -81,7 +82,7 @@
     
     <div class="polaczone">
         <?php
-            if(isset($_SESSION['zalogowano'])){
+            if($a){
         ?>
                 <form action="ALLinsert.php" method="post" class="allins">
                     <input class="ains" type="text" name="aAutor" placeholder="Autor">
@@ -117,7 +118,7 @@
                 </form>
             <?php
             }else{
-                echo("<div class='zal'><a class='baza' href='./logowanie/logowanie.php'>Tylko zalogowani użytkownicy mogą edytować bazę danych</a></div>");
+                echo("<div class='zal'><a class='baza' href='./logowanie/logowanie.php'>Tylko administratorzy mogą edytować zbiór książek</a></div>");
             }
         ?>
         

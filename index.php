@@ -23,7 +23,8 @@
             <?php
             session_start();
             $a = isset($_SESSION['zalogowano_a']);
-                if($a){
+            $u = isset($_SESSION['zalogowano_u']);
+                if($a || $u){
                 ?>
                 <form action="uwierzytelnie.php" method="get">
                 <input type="hidden" name="akcja" value="wyloguj">

@@ -39,7 +39,7 @@
         <?php
             $a = !isset($_SESSION['zalogowano_a']);
             $u = !isset($_SESSION['zalogowano_u']);
-            if($a or $u){
+            if($a && $u){
         ?>
 
         <form action="uwierzytelnie.php" method="post" class="zaloguj">
@@ -57,15 +57,24 @@
         <button class="newAcc">Załórz konto</button>
             
         <?php
-            }else{
+            }elseif(isset($_SESSION['zalogowano_u'])){
         ?>
-            <p class='zalog'>Udało Ci się zalogować na konto.</p>
-            <form action="uwierzytelnie.php" method="get">
-                <input type="hidden" name="akcja" value="wyloguj">
-                <input type="submit" value="wyloguj">
-            </form>
+            <p class='zalog'>Udało Ci się zalogować na konto użytkownika.</p>
+                <form action="uwierzytelnie.php" method="get">
+                    <input type="hidden" name="akcja" value="wyloguj">
+                    <input type="submit" value="wyloguj">
+                </form>
         <?php
-        }
+                }elseif(isset($_SESSION['zalogowano_a'])){
+        ?>
+            <p class='zalog'>Udało Ci się zalogować na konto administratora.</p>
+                <form action="uwierzytelnie.php" method="get">
+                    <input type="hidden" name="akcja" value="wyloguj">
+                    <input type="submit" value="wyloguj">
+                </form>
+
+        <?php
+            }
             if(isset($_SESSION['fail'])){
         ?>
         

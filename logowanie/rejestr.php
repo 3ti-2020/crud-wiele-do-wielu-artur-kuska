@@ -11,7 +11,7 @@
 
     $conn->set_charset('utf-8');
 
-    $sql = "INSERT INTO konta VALUES ('$user', '$haslo')";
+    $sql = "INSERT INTO konta (`login`, `haslo`) VALUES ('$user', '$haslo')";
 
     mysqli_query($conn, $sql);
 

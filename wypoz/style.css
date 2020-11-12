@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: aqua;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 5px;
+    grid-template-rows: 1fr 8fr 1fr;
+    grid-template-areas: 
+    "a a"
+    "b d"
+    "c c";
+}
+
+header{
+    grid-area: a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: pink;
+}
+
+.zz{
+    width: 5%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: center;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+.yy{
+    width: 5%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: center;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+.allins{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 50%;
+    width: 100%;
+}
+
+.sel{
+    text-align: center;
+    height: 15%;
+    width: 40%;
+    margin: 1%;
+}
+
+.polaczone{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.ma{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+nav{
+    height: 100%;
+    width: 100%;
+    grid-area: d;
+    background-color: pink;
+}
+
+main{
+    grid-area: b;
+    display: flex;
+    background-color: pink;
+    justify-content: center;
+    align-items: center;
+}
+
+footer{
+    grid-area: c;
+    background-color: pink;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.karty{
+    height: 50px;
+    margin: 2rem;
+    width: 200px;
+    background-color: rgb(11, 96, 167);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: large;
+    color: whitesmoke;
+    font-weight: 600;
+}
+
+.linkcard{
+    text-decoration: none;
+}
+
+.zdj{
+    height: 50px;
+    width: 50px;
+}
+
+.nowe_konto, .rejestracja{
+    display: none;
+}
+
+.nowe_konto{
+    flex-direction: column;
+}
+
+.all{
+    width: 25%;
+}
+
+.blad{
+    font-size: large;
+    text-align: center;
+    font-weight: 800;
+}
+
+.zalog{
+    font-size: xx-large;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 5rem;
+    background-color: rgba(250, 250, 250, 0.35);
+    color: rgb(40, 8, 182);
+}

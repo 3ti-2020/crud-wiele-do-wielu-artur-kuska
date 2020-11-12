@@ -89,8 +89,8 @@
             $res2  = $conn->query("SELECT * FROM `lib_tytul`");
             ?>
 
-            <form action="dodaj" method="post" class="allins">
-            <select class="sel" name="tytul">
+            <form action="dodaj.php" method="post" class="allins">
+            <select class="sel" name='ksiazka'>
             <?php
                 while($row=$res2->fetch_assoc()){
                     echo("<option class='sel' value='".$row['id_tytul']."'>".$row['tytul']."</option>");
@@ -98,14 +98,13 @@
             ?>
             </select>
 
-            <select class="sel" name="tytul">
+            <select class="sel" name="uzyt" class="uzyt">
             <?php
                 while($mog=$res->fetch_assoc()){
-                    echo('<option type="text" value="'.$mog['id'].'" class="uzyt" name="uzyt">'.$mog['login'].'</option>');
+                    echo('<option type="text" value="'.$mog['id'].'"name="uzyt">'.$mog['login'].'</option>');
                 }
             ?>
             </select>
-            <input type="date" class='sel' name="d_wyp">
             <input type="date" class='sel' name="d_odd">
             <input type="submit" class='sel' value="Wypożycz">
             </form>

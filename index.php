@@ -28,7 +28,7 @@
                 ?>
                 <form action="uwierzytelnie.php" method="get">
                 <input type="hidden" name="akcja" value="wyloguj">
-                <input class="prg" type="submit" value="wyloguj">
+                <input class="prg" type="submit" value="Wyloguj">
             </form>
             <?php
                 }
@@ -134,6 +134,7 @@
     
     <a class='linkcard' href="./logowanie/logowanie.php"><div class="karty">Logowanie</div></a>
     <a class='linkcard' href="./card/index.php"><div class="karty">Karty</div></a>
+    <a class='linkcard' href="./wypoz/wyp.php"><div class="karty">Wypożyczenia</div></a>
     
 </footer>
 </body>

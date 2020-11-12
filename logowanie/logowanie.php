@@ -27,7 +27,7 @@
                 ?>
                 <form action="uwierzytelnie.php" method="get">
                 <input type="hidden" name="akcja" value="wyloguj">
-                <input class="prg" type="submit" value="wyloguj">
+                <input class="prg" type="submit" value="Wyloguj">
             </form>
             <?php
                 }
@@ -49,16 +49,16 @@
         <form action="uwierzytelnie.php" method="post" class="zaloguj">
             <input type="text" name="user" placeholder="nazwa uzytkownika">
             <input type="password" name="haslo" placeholder="haslo">
-            <input class="zaloguj" type="submit" value="zaloguj">
+            <input class="zaloguj" type="submit" value="Zaloguj">
         </form>
             
         <form action="rejestr.php" method="post" class="nowe_konto">
             <input type="text" name="user" placeholder="nazwa uzytkownika">
             <input type="password" name="haslo" placeholder="haslo">
-            <input class="rejestracja" type="submit" value="utwórz nowe konto">
+            <input class="rejestracja" type="submit" value="Utwórz nowe konto">
         </form>
                 
-        <button class="newAcc">Załórz konto</button>
+        <button class="newAcc">Załóż konto</button>
             
         <?php
             }elseif(isset($_SESSION['zalogowano_u'])){
@@ -66,7 +66,7 @@
             <p class='zalog'>Udało Ci się zalogować na konto użytkownika.</p>
                 <form action="uwierzytelnie.php" method="get">
                     <input type="hidden" name="akcja" value="wyloguj">
-                    <input type="submit" value="wyloguj">
+                    <input type="submit" value="Wyloguj">
                 </form>
         <?php
                 }elseif(isset($_SESSION['zalogowano_a'])){
@@ -74,7 +74,7 @@
             <p class='zalog'>Udało Ci się zalogować na konto administratora.</p>
                 <form action="uwierzytelnie.php" method="get">
                     <input type="hidden" name="akcja" value="wyloguj">
-                    <input type="submit" value="wyloguj">
+                    <input type="submit" value="Wyloguj">
                 </form>
 
         <?php
@@ -97,6 +97,8 @@
         
         <a class='linkcard' href="./../index.php"><div class="karty">Strona główna</div></a>
         <a class='linkcard' href="./../card/index.php"><div class="karty">Karty</div></a>
+        <a class='linkcard' href="./../wypoz/wyp.php"><div class="karty">Wypożyczenia</div></a>
+
         
     </footer>
 </body>

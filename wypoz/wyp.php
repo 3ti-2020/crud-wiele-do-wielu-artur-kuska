@@ -45,7 +45,7 @@
 
             $conn = new mysqli($servername, $username, $password, $dbname);
             $result = $conn->query("SELECT wypoz.id_w, lib_tytul.tytul as tytuł, lib_autor.autor as autor, 
-            konta.login as użytkownik, d_wyp as 'data wypożyczenia' , d_odd as 'data oddania' FROM wypoz JOIN lib_tytul ON lib_tytul.id_tytul=wypoz.id_k JOIN konta on konta.id=wypoz.id_u JOIN lib_autor_tytul ON lib_autor_tytul.id_tytul = lib_tytul.id_tytul JOIN lib_autor ON lib_autor_tytul.id_autor=lib_autor.id_autor") or die($conn->error);
+            konta.login as użytkownik, d_wyp as 'data wypożyczenia' FROM wypoz JOIN lib_tytul ON lib_tytul.id_tytul=wypoz.id_k JOIN konta on konta.id=wypoz.id_u JOIN lib_autor_tytul ON lib_autor_tytul.id_tytul = lib_tytul.id_tytul JOIN lib_autor ON lib_autor_tytul.id_autor=lib_autor.id_autor") or die($conn->error);
 
             $conn->set_charset('utf-8');
 
@@ -54,10 +54,9 @@
                 <th>Tytul</th>
                 <th>Nazwisko</th>
                 <th>Użytkownik</th>
-                <th>Data wypożyczenia</th>
-                <th>Data oddania</th>");
+                <th>Data wypożyczenia</th>");
                 if($a){
-                    echo("<th class='lp'>Usun</th>");
+                    echo("<th class='lp'>Oddanie</th>");
                 }
                 echo("</tr>");
 
@@ -67,13 +66,12 @@
                     echo("<td>".$row['autor']."</td>");
                     echo("<td>".$row['użytkownik']."</td>");
                     echo("<td>".$row['data wypożyczenia']."</td>");
-                    echo("<td>".$row['data oddania']."</td>"); 
                     
                     if($a){
                         echo("<td>
                                 <form action='delete.php' method='post'>
                                     <input type='hidden' name='del' value='".$row['id_w']."'>
-                                    <input class='dilit' type='submit' value='Usuń'>
+                                    <input class='dilit' type='submit' value='Oddaj'>
                                 </form>
                         </td>");
                     }
@@ -118,7 +116,6 @@
                 }
             ?>
             </select>
-            <input type="date" class='sel' name="d_odd">
             <input type="submit" class='sel' value="Wypożycz">
             </form>
 

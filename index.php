@@ -64,7 +64,7 @@
                     echo("<td>".$row['autor']."</td>");
                     echo("<td>".$row['tytul']."</td>");
                     
-                    if($a){
+                    if($a || $e){
                         echo("<td>
                                 <form action='delete.php' method='post'>
                                     <input type='hidden' name='del' value='".$row['id']."'>

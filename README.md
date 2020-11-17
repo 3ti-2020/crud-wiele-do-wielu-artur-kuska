@@ -2,9 +2,10 @@ https://artur-kuska-wdw.herokuapp.com
 
 
 passy-administrator;
-l: admin    h: admin
-
+a a       admin admin
 
 passy-user;
-l: a    h: a
-l: b    h: b
+e e       edit edit
+
+passy-user;
+u u       user user

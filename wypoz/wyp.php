@@ -23,7 +23,8 @@
             session_start();
             $a = isset($_SESSION['zalogowano_a']);
             $u = isset($_SESSION['zalogowano_u']);
-                if($a || $u){
+            $e = isset($_SESSION['zalogowano_e']);
+                if($a || $u || $e){
                 ?>
                 <form action="uwierzytelnie.php" method="get">
                 <input type="hidden" name="akcja" value="wyloguj">
@@ -55,7 +56,7 @@
                 <th>Nazwisko</th>
                 <th>Użytkownik</th>
                 <th>Data wypożyczenia</th>");
-                if($a){
+                if($a || $e){
                     echo("<th class='lp'>Oddanie</th>");
                 }
                 echo("</tr>");
@@ -67,7 +68,7 @@
                     echo("<td>".$row['użytkownik']."</td>");
                     echo("<td>".$row['data wypożyczenia']."</td>");
                     
-                    if($a){
+                    if($a || $e){
                         echo("<td>
                                 <form action='delete.php' method='post'>
                                     <input type='hidden' name='del' value='".$row['id_w']."'>
@@ -86,7 +87,7 @@
     <nav>
         <div class="polaczone">
         <?php
-            if($a){
+            if($a || $e){
             $servername = "remotemysql.com";
             $username = "EItVVUd8zl";
             $password = "MadGhgwbbw";
@@ -121,7 +122,7 @@
 
             <?php
             }else{
-                echo("<div class='zal'><a class='baza' href='./../logowanie/logowanie.php'>Tylko administratorzy mogą wypożyczyć książkę</a></div>");
+                echo("<div class='zal'><a class='baza' href='./../logowanie/logowanie.php'>Tylko uprawnieni do tego użytkownicy mogą wypożyczyć lub oddać książkę</a></div>");
             }
         ?>
         

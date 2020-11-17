@@ -24,7 +24,8 @@
             session_start();
             $a = isset($_SESSION['zalogowano_a']);
             $u = isset($_SESSION['zalogowano_u']);
-                if($a || $u){
+            $e = isset($_SESSION['zalogowano_e']);
+                if($a || $u || $e){
                 ?>
                 <form action="uwierzytelnie.php" method="get">
                 <input type="hidden" name="akcja" value="wyloguj">
@@ -83,7 +84,7 @@
     
     <div class="polaczone">
         <?php
-            if($a){
+            if($a || $e){
         ?>
                 <form action="ALLinsert.php" method="post" class="allins">
                     <input class="ains" type="text" name="aAutor" placeholder="Autor">
@@ -119,7 +120,7 @@
                 </form>
             <?php
             }else{
-                echo("<div class='zal'><a class='baza' href='./logowanie/logowanie.php'>Tylko administratorzy mogą edytować zbiór książek</a></div>");
+                echo("<div class='zal'><a class='baza' href='./logowanie/logowanie.php'>Tylko uprawnieni do tego użytkownicy mogą edytować zbiór książek</a></div>");
             }
         ?>
         

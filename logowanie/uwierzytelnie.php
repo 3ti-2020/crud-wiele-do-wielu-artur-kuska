@@ -18,12 +18,12 @@ session_start();
 
             echo($row['login']." ".$row['haslo']);
             if($row['login']==$_POST['user'] && $row['haslo']==$_POST['haslo']){
-                if($row['admin']==1){
+                if($row['id_rola']==1){
                     $_SESSION['zalogowano_a'] = 1;
                     unset($_SESSION['zalogowano_u']);
                 echo 'ZALOGOWANO A';
                 }
-                elseif($row['admin']==0){
+                elseif($row['id_rola']==0){
                     $_SESSION['zalogowano_u'] = 1;
                     unset($_SESSION['zalogowano_a']);
                     echo 'ZALOGOWANO U';

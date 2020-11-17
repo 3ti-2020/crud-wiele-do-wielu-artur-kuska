@@ -90,7 +90,7 @@
 
         <?php
             }
-            if(isset($_SESSION['fail'])){
+            elseif(isset($_SESSION['fail'])){
         ?>
         
         <p class='blad' >Niestety nie udało Ci się zalogować.<br>Sprawdź poprawność danych</p>

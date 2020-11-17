@@ -54,7 +54,7 @@
                 echo("<tr>
                 <th>Nazwisko</th>
                 <th>Tytul</th>");
-                if($a){
+                if($a || $e){
                     echo("<th class='lp'>Usun</th>");
                 }
                 echo("</tr>");

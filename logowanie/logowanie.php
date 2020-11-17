@@ -23,7 +23,8 @@
             session_start();
             $a = isset($_SESSION['zalogowano_a']);
             $u = isset($_SESSION['zalogowano_u']);
-                if($a || $u){
+            $e = isset($_SESSION['zalogowano_e']);
+                if($a || $u || $e){
                 ?>
                 <form action="uwierzytelnie.php" method="get">
                 <input type="hidden" name="akcja" value="wyloguj">
@@ -43,7 +44,8 @@
         <?php
             $a = !isset($_SESSION['zalogowano_a']);
             $u = !isset($_SESSION['zalogowano_u']);
-            if($a && $u){
+            $e = !isset($_SESSION['zalogowano_e']);
+            if($a && $u && $e){
         ?>
 
         <form action="uwierzytelnie.php" method="post" class="zaloguj">
@@ -60,6 +62,15 @@
                 
         <button class="newAcc">Załóż konto</button>
             
+            
+        <?php
+            }elseif(isset($_SESSION['zalogowano_e'])){
+        ?>
+            <p class='zalog'>Udało Ci się zalogować na konto edytora.</p>
+                <form action="uwierzytelnie.php" method="get">
+                    <input type="hidden" name="akcja" value="wyloguj">
+                    <input type="submit" value="Wyloguj">
+                </form>
         <?php
             }elseif(isset($_SESSION['zalogowano_u'])){
         ?>

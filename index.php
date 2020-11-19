@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wiele do wielu</title>
+    <title>Książki</title>
     <link rel="stylesheet" href="style.css">
     
 </head>
@@ -89,8 +89,8 @@
                 <form action="ALLinsert.php" method="post" class="allins">
                     <input class="ains" type="text" name="aAutor" placeholder="Autor">
                     <input class="ains" type="text" name="aTyt" placeholder="Tytul">
-                    <input class="ains" type="submit" value="Dodaj parę">
-                    <input class="ains" type="reset" value="Usuń dane">
+                    <input class="ains" type="submit" value="Dodaj Książkę">
+                    <input class="ains" type="reset" value="Usuń podane dane">
                     <?php
                         $servername = "remotemysql.com";
                         $username = "EItVVUd8zl";
@@ -133,6 +133,7 @@
 
 <footer>
     
+    <a class='linkcard' href="./index.php"><div class="karty">Książki</div></a>
     <a class='linkcard' href="./logowanie/logowanie.php"><div class="karty">Logowanie</div></a>
     <a class='linkcard' href="./card/index.php"><div class="karty">Karty</div></a>
     <a class='linkcard' href="./wypoz/wyp.php"><div class="karty">Wypożyczenia</div></a>

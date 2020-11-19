@@ -104,6 +104,9 @@
             ?>
 
             <form action="dodaj.php" method="post" class="allins">
+
+            <p class='ksio'>Książka:</p>
+
             <select class="sel" name='ksiazka'>
             <?php
                 while($row=$res2->fetch_assoc()){
@@ -111,6 +114,8 @@
                 }
             ?>
             </select>
+
+            <p class='ksio'>Użytkownik:</p>
 
             <select class="sel" name="uzyt" class="uzyt">
             <?php
@@ -120,9 +125,11 @@
             ?>
             </select>
 
+            <p class='ksio'>Planowana data oddania:</p>
+
             <input type='date' class="sel" name="oddanie">
 
-            <input type="submit" class='sel' value="Wypożycz">
+            <input type="submit" class='sel marina' value="Wypożycz">
             </form>
 
             <?php
@@ -136,10 +143,12 @@
 
 
     <footer>
-        
-        <a class='linkcard' href="./../index.php"><div class="karty">Strona główna</div></a>
-        <a class='linkcard' href="./../card/index.php"><div class="karty">Karty</div></a>
+
+
+        <a class='linkcard' href="./../index.php"><div class="karty">Książki</div></a>
         <a class='linkcard' href="./../logowanie/logowanie.php"><div class="karty">Logowanie</div></a>
+        <a class='linkcard' href="./../card/index.php"><div class="karty">Karty</div></a>
+        <a class='linkcard' href="./wyp.php"><div class="karty">Wypożyczenia</div></a>
         
     </footer>
 </body>

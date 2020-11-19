@@ -187,6 +187,7 @@ footer{
 
 .all{
     width: 25%;
+    height: 100%;
 }
 
 .blad{
@@ -202,4 +203,14 @@ footer{
     margin-bottom: 5rem;
     background-color: rgba(250, 250, 250, 0.35);
     color: rgb(40, 8, 182);
+}
+
+.ksio{
+    font-weight: 800;
+    font-size: 20px;
+    margin-top: 1rem;
+}
+
+.marina{
+    margin-top: 1rem;
 }

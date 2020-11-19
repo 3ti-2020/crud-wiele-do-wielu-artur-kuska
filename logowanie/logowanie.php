@@ -106,7 +106,8 @@
 
     <footer>
         
-        <a class='linkcard' href="./../index.php"><div class="karty">Strona główna</div></a>
+        <a class='linkcard' href="./../index.php"><div class="karty">Książki</div></a>
+        <a class='linkcard' href="./logowanie.php"><div class="karty">Logowanie</div></a>
         <a class='linkcard' href="./../card/index.php"><div class="karty">Karty</div></a>
         <a class='linkcard' href="./../wypoz/wyp.php"><div class="karty">Wypożyczenia</div></a>
 

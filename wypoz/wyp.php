@@ -72,7 +72,15 @@
                     echo("<td>".$row['oddanie']."</td>");
                     
                     if($a || $e){
+                        
+                        $dn = $row['dni'];
+                        if ($dn>5){
                         echo("<td>".$row['dni']."</td>");
+                        }elseif ($dn>-1 && $dn<6) {
+                        echo("<td class='yellow'>".$row['dni']."</td>");
+                        }else if($dn<0){
+                            echo("<td class='red'>".$row['dni']."</td>");
+                        }
                         echo("<td>
                                 <form action='delete.php' method='post'>
                                     <input type='hidden' name='del' value='".$row['id_w']."'>

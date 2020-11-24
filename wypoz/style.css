@@ -107,6 +107,17 @@ tr, th{
     width: 120px;
 }
 
+.yellow{
+    background-color: yellow;
+    font-weight: 600;
+}
+
+.red{
+    background-color: red;
+    color: blanchedalmond;
+    font-weight: 900;
+}
+
 th{
     font-weight: 900;
 }
@@ -116,9 +127,8 @@ th{
     height: 50px;
 }
 
-tr:hover{
+td:hover, tr:hover{
     background-color: #FF8000;
-    color: white;
     font-weight: bolder; 
 }
 

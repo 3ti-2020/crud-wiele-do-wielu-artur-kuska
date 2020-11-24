@@ -46,7 +46,7 @@
 
             $conn = new mysqli($servername, $username, $password, $dbname);
             $result = $conn->query("SELECT wypoz.id_w, lib_tytul.tytul as tytuł, lib_autor.autor as autor, 
-            konta.login as użytkownik, d_wyp as 'data wypożyczenia', d_p_odd as oddanie, datediff(d_p_odd, d_wyp) as dni FROM wypoz JOIN lib_tytul ON lib_tytul.id_tytul=wypoz.id_k JOIN konta on konta.id=wypoz.id_u JOIN lib_autor_tytul ON lib_autor_tytul.id_tytul = lib_tytul.id_tytul JOIN lib_autor ON lib_autor_tytul.id_autor=lib_autor.id_autor order by dni asc") or die($conn->error);
+            konta.login as użytkownik, d_wyp as 'data wypożyczenia', d_p_odd as oddanie, datediff(d_p_odd, CURRENT_DATE) as dni FROM wypoz JOIN lib_tytul ON lib_tytul.id_tytul=wypoz.id_k JOIN konta on konta.id=wypoz.id_u JOIN lib_autor_tytul ON lib_autor_tytul.id_tytul = lib_tytul.id_tytul JOIN lib_autor ON lib_autor_tytul.id_autor=lib_autor.id_autor order by dni asc") or die($conn->error);
 
             $conn->set_charset('utf-8');
 
@@ -56,7 +56,7 @@
                 <th>Nazwisko</th>
                 <th>Użytkownik</th>
                 <th>Data wypożyczenia</th>
-                <th>Data planowanego oddania</th>");
+                <th>Planowane oddanie</th>");
                 if($a || $e){
                     echo("<th class='lp'>Dni do oddania</th>");
                     echo("<th class='lp'>Oddanie</th>");

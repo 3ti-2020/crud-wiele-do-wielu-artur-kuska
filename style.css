@@ -100,14 +100,35 @@ footer{
 .tabelka{
     border-collapse: collapse;
     text-align: center;
-    border: solid 2px white;
+    border: solid 2px black;
 }
 
 tr, th{
-    background-color: black;
-    color: white;
+    font-weight: 500;
+    background-color: #ACE1AF;
+    color: black;
     height: 50px;
     width: 120px;
+}
+
+.yellow{
+    font-weight: 500;
+    background-color: yellow;
+    color: black;
+    height: 50px;
+    width: 120px;
+}
+
+.red{
+    font-weight: 500;
+    background-color: red;
+    color: black;
+    height: 50px;
+    width: 120px;
+}
+
+th{
+    font-weight: 900;
 }
 
 .lp{
@@ -116,9 +137,9 @@ tr, th{
 }
 
 tr:hover{
-    background-color: white;
-    color: black;
-    font-weight: bold; 
+    background-color: #FF8000;
+    color: white;
+    font-weight: bolder; 
 }
 
 .formularze{

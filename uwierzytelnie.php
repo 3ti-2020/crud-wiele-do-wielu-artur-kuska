@@ -56,5 +56,5 @@ session_start();
         echo 'WYLOGOWANO';
     }
 
-    header('Location: wyp.php');
+    header('Location: index.php');
 ?>

@@ -6,9 +6,9 @@
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
-    $sql= "DELETE FROM `wypoz` WHERE wypoz.id_w='".$_POST['del']."'";
+    $sql= "DELETE FROM `lib_autor_tytul` WHERE id_autor_tytul='".$_POST['del']."'";
 
     mysqli_query($conn, $sql);
 
-    header("location:wyp.php");
+    header("location:index.php");
 ?>

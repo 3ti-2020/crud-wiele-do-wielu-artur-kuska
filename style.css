@@ -11,7 +11,7 @@ body{
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-gap: 5px;
-    grid-template-rows: 1fr 8fr 1fr;
+    grid-template-rows: 1fr 5fr 1fr;
     grid-template-areas: 
     "a a"
     "b d"
@@ -48,14 +48,6 @@ header{
     margin-right: 20px;
     margin-top: 15px;
 }
-.allins{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 50%;
-    width: 100%;
-}
 
 .prg{
     width: 100%;
@@ -68,22 +60,6 @@ header{
     font-weight: 600;
 }
 
-.sel{
-    text-align: center;
-    height: 15%;
-    width: 40%;
-    margin: 1%;
-}
-
-.polaczone{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-}
-
 .ma{
     width: 90%;
     height: 100%;
@@ -91,6 +67,34 @@ header{
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+main{
+    grid-area: b;
+    display: flex;
+    background-color: pink;
+    justify-content: center;
+    align-items: center;
+}
+
+nav{
+    height: 100%;
+    width: 100%;
+    grid-area: d;
+    background-color: pink;
+}
+
+footer{
+    grid-area: c;
+    background-color: pink;
+}
+
+.tab{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .tabelka{
@@ -107,17 +111,6 @@ tr, th{
     width: 120px;
 }
 
-.yellow{
-    background-color: yellow;
-    font-weight: 600;
-}
-
-.red{
-    background-color: red;
-    color: blanchedalmond;
-    font-weight: 900;
-}
-
 th{
     font-weight: 900;
 }
@@ -127,51 +120,74 @@ th{
     height: 50px;
 }
 
-td:hover, tr:hover{
+tr:hover{
     background-color: #FF8000;
+    color: white;
     font-weight: bolder; 
 }
 
-.zal{
-    height: 50%;
-    width: 70%;
-    display: flex;
+.formularze{
+    height: 80%;
+    width: 100%;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-weight: 800;
-    font-size: 30px;
-    text-decoration: none;
-    color: black;
-}
-
-.baza{
-    text-decoration: underline;
-    color: black;
-}
-
-nav{
-    height: 100%;
-    width: 100%;
-    grid-area: d;
-    background-color: pink;
-}
-
-main{
-    grid-area: b;
     display: flex;
-    background-color: pink;
+    flex-direction: column;
+}
+
+.ins{
+    height: 50%;
+    width: 100%;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.srodek{
+    text-align: center;
+}
+
+.styleins{
+    width: 50%;
+    height: 25px;
 }
 
 footer{
-    grid-area: c;
-    background-color: pink;
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
+}
+
+.polaczone{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.allins{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 50%;
+    width: 100%;
+}
+
+.ains{
+    text-align: center;
+    height: 15%;
+    width: 40%;
+    margin: 1%;
+}
+
+.sel{
+    display: none;
 }
 
 .karty{
@@ -197,40 +213,20 @@ footer{
     width: 50px;
 }
 
-.nowe_konto, .rejestracja{
-    display: none;
-}
-
-.nowe_konto{
-    flex-direction: column;
-}
-
-.all{
-    width: 25%;
-    height: 100%;
-}
-
-.blad{
-    font-size: large;
+.zal{
+    height: 50%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     font-weight: 800;
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
 }
 
-.zalog{
-    font-size: xx-large;
-    text-align: center;
-    font-weight: 800;
-    margin-bottom: 5rem;
-    background-color: rgba(250, 250, 250, 0.35);
-    color: rgb(40, 8, 182);
-}
-
-.ksio{
-    font-weight: 800;
-    font-size: 20px;
-    margin-top: 1rem;
-}
-
-.marina{
-    margin-top: 1rem;
+.baza{
+    text-decoration: underline;
+    color: black;
 }

@@ -5,7 +5,6 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-    <script src="jotes.js" defer=""></script>
 </head>
 <body>
     <div class="cnt">
@@ -46,4 +45,6 @@
     </template>
 
 </body>
+    
+    <script src="jotes.js" defer=""></script>
 </html>

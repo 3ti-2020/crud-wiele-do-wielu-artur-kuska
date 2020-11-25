@@ -1,4 +1,5 @@
-<html lang="pl"><head>
+<html>
+<head>
     <meta charset="utf-8">
     <title>TODO</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -44,4 +45,5 @@
         </div>
     </template>
 
-</body></html>
+</body>
+</html>

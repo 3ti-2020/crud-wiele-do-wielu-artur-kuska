@@ -8,10 +8,11 @@
     <script src="jotes.js" defer=""></script>
 </head>
 <body>
-    <div class="cnt">
+    <div class="all">
+            <div class="cnt">
         <form class="form" id="todoForm">
             <div class="form-row">
-                <label class="form-label" for="todoMessage">Podaj treść zadania todo</label>
+                <label class="form-label" for="todoMessage">Podaj treść zadania todo             </label>
                 <textarea class="form-message" name="todoMessage" id="todoMessage"></textarea>
             </div>
             <div class="form-row">
@@ -44,6 +45,8 @@
         <div class="element-text">
         </div>
     </template>
+    </div>
+
 
 </body>
 </html>

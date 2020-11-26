@@ -31,12 +31,13 @@
 .task{
     padding: 1rem;
     min-width: 100px;
-    background-color: aqua;
+    background-color: rgb(0, 191, 255);
     margin-top: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-weight: 800;
 }
 
 .del{

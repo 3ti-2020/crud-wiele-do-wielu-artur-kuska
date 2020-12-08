@@ -44,6 +44,38 @@
             </ol>
             </article>
 
+            <article class="question">
+            <h3 class="question_title">Które ze zdań jest prawdziwe w stosunku do grafiki rastrowej?</h3>
+            <ol type="A" class="question_answerList">
+                <li class="question_answerItem">Zapisywany obraz jest opisywany za pośrednictwem figur geometrycznych umieszczonych w układzie współrzędnych</li>
+                <li class="question_answerItem">Grafika rastrowa nie jest zapisana w formacie WMF (ang. Windows Metafile Format - format metaplików w Windows)</li>
+                <li class="question_answerItem">Podczas przekształcania polegającego na skalowaniu, skalowany obraz nie zmienia jakości</li>
+                <li class="question_answerItem">Jest to prezentacja obrazu za pomocą pionowo-poziomej siatki odpowiednio kolorowanych pikseli na monitorze komputera, drukarce lub innym urządzeniu wyjściowym</li>
+                <details class="question_details">
+                <summary class="question_detailsSummary">Sprawdź odpowiedź</summary> 
+                <p class="question_detailsRightAnswer"> Odpowiedz: 
+                    <span>D</span> 
+                </p>
+                </details>
+            </ol>
+            </article>
+
+            <article class="question">
+            <h3 class="question_title">Instrukcja przypisania elementu do tablicy w języku JavaScript dotyczy tablicy</h3>
+            <ol type="A" class="question_answerList">
+                <li class="question_answerItem">numerycznej</li>
+                <li class="question_answerItem">asocjacyjnej</li>
+                <li class="question_answerItem">statycznej</li>
+                <li class="question_answerItem">wielowymiarowej</li>
+                <details class="question_details">
+                <summary class="question_detailsSummary">Sprawdź odpowiedź</summary> 
+                <p class="question_detailsRightAnswer"> Odpowiedz: 
+                    <span>B</span> 
+                </p>
+                </details>
+            </ol>
+            </article>
+
             <!-- <article class="question">
             <h3 class="question_title"></h3>
             <ol type="A" class="question_answerList">

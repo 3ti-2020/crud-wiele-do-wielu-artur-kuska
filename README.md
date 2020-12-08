@@ -1,6 +1,8 @@
-https://artur-kuska-wdw.herokuapp.com/todo/index.php
+Todo: https://artur-kuska-wdw.herokuapp.com/todo/index.php
 
-https://artur-kuska-wdw.herokuapp.com
+Pytania egzaminacyjne: https://artur-kuska-wdw.herokuapp.com/egz/egz.php
+
+Biblioteka: https://artur-kuska-wdw.herokuapp.com
 
 Admin: a  a lub   admin admin
 Edytor: e e lub   edit  edit

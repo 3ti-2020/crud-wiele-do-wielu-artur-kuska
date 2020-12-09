@@ -1,3 +1,5 @@
+Blog: http://projekt-blog.herokuapp.com/blog/
+
 Todo: https://artur-kuska-wdw.herokuapp.com/todo/index.php
 
 Pytania egzaminacyjne: https://artur-kuska-wdw.herokuapp.com/egz/egz.php

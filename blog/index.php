@@ -31,7 +31,7 @@
 
             while($row=$result->fetch_assoc() ){
                 echo("<article class='post'>
-                    ".$row['post']."
+                    ".$row['zdjecie']."
                     </article>");
             }
             ?>

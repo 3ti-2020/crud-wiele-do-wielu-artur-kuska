@@ -15,9 +15,7 @@
                 <?php
                 session_start();
                 $a = isset($_SESSION['zalogowano_a']);
-                $u = isset($_SESSION['zalogowano_u']);
-                $e = isset($_SESSION['zalogowano_e']);
-                    if($a || $u || $e){
+                    if($a){
                     ?>
                     <form action="uwierzytelnie.php" method="get">
                     <input type="hidden" name="akcja" value="wyloguj">

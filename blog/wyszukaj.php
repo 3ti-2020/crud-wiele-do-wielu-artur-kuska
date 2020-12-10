@@ -27,21 +27,20 @@
                 $password = "MadGhgwbbw";
                 $dbname = "EItVVUd8zl";
 
-                $wyszukaj = $_POST['wyszukaj'];
-
                 $conn = new mysqli($servername, $username, $password, $dbname);
-                $result = $conn->query("SELECT DISTINCT post.id, tekst, zdjecie, tag.tag FROM `lacz` JOIN tag ON tag.id = lacz.tag JOIN post on post.id = lacz.post where tag.tag like '_".$_POST['wyszukaj']."'");
-                $res2 = $conn->query("SELECT DISTINCT post.id, tag.tag as tag FROM `lacz` JOIN tag ON tag.id = lacz.tag JOIN post on post.id = lacz.post");
-
+                $result = $conn->query("SELECT DISTINCT post.id as pid, tekst, zdjecie, tag.tag FROM `lacz` JOIN tag ON tag.id = lacz.tag JOIN post on post.id = lacz.post where tag.tag like '_".$_POST['wyszukaj']."' order by pid desc");
+               
                 while($row=$result->fetch_assoc() ){
+
                     echo("<article class='post'>
                         <p class='opis'>".$row['tekst']."</p>");
-                    
+                    $res2 = $conn->query("SELECT lacz.id, post.id, post.zdjecie, tag.tag as tag FROM `lacz` JOIN tag ON tag.id = lacz.tag JOIN post on post.id = lacz.post where post.id=".$row['pid']);
+
                         echo("<div class='o_tag'>");
                             while($row2=$res2->fetch_assoc() ){
                                 echo(" <p class='opis_tag'>".$row2['tag']."</p>");
                             }
-                    echo("</div><img src='".$row['zdjecie']."' class='zdj_p'>
+                            echo("</div><img src='".$row['zdjecie']."' class='zdj_p'>
                         </article>");
                 }
             ?>

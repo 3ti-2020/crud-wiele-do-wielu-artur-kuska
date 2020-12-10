@@ -1,18 +1,18 @@
 *{
     margin: 0;
     padding: 0;
-    background-color: #73FBFF;
+    background-color: #21FFF7;
 }
 
 body{
     display: grid;
     width: 100%;
     grid-template-columns: 5fr 1fr;
-    grid-template-rows: 200px 10fr;
+    grid-template-rows: 150px 10fr;
     grid-template-areas: 
     "a a"
     "b c";
-    background-color: #F000FC;
+    background-color: #FB05FF;
 }
 
 .it{
@@ -29,6 +29,23 @@ body{
     background-size: auto;
     background-position: center;
     justify-content: space-between;
+}
+
+.left{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.right{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 
 .blg{
@@ -53,7 +70,27 @@ body{
 
 .in_s{
     margin-top: 1rem;
-    font-size: large;
+    font-size: larger;
+    border-radius: 50px;
+    height: 40px;
+    width: 100px;
+}
+
+.in_t{
+    border-radius: 20px;
+    height: 50px;
+    width: 200px;
+    font-size: larger;
+}
+
+.in_g{
+    font-weight: 900;
+    font-size: 35px;
+}
+
+.hasz{
+    font-weight: 900;
+    font-size: larger;
 }
 
 p{
@@ -66,7 +103,6 @@ p{
     align-items: center;
     text-align: center;
     flex-direction: column;
-    position: fixed;
 }
 
 .images{
@@ -112,7 +148,7 @@ p{
 
 .fa{
     font-size: 50px;
-    color: #FC690D;
+    color: #FF5A00;
     text-shadow: 0px 0px 15px black;
 }
 
@@ -145,9 +181,28 @@ p{
 
 .btn{
     font-size: large;
+    font-weight: 600;
     width: 200px;
-    height: 100px;
+    height: 75px;
     margin-right: 2rem;
+    border-radius: 20px;
+}
+
+:hover.btn{
+    animation: bgc 10s 10ms infinite;
+}
+
+.btn2{
+    font-size: large;
+    font-weight: 600;
+    width: 100px;
+    height: 50px;
+    margin-left: 1rem;
+    border-radius: 20px;
+}
+
+:hover.btn2{
+    animation: bgc 10s 10ms infinite;
 }
 
 .git{
@@ -182,3 +237,53 @@ p{
     background-color: #8BB3FC;
     margin-bottom: 0.5rem;
 }
+
+.strg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    position: fixed;
+}
+
+@keyframes bgc {
+    0%{
+        background-color: #21FFF7;
+        color: black;
+        font-size: 10px;
+    }
+
+    25%{
+        
+        background-color: #0036F0;
+        color: white;
+        font-size: 15px;
+    }
+
+    50%{
+        background-color: #FB05FF;
+        color: black;
+        font-size: 20px;
+    }
+
+    75%{
+        background-color: #0036F0;
+        color: white;
+        font-size: 15px;
+    }
+
+    100%{
+        background-color: #21FFF7;
+        color: black;
+        font-size: 10px;
+    }
+}
+
+/* 
+        {kolory:
+        #FCBE12
+        #FF5A00
+        #FB05FF
+        #0036F0
+        #21FFF7} */

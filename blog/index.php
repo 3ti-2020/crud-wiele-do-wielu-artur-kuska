@@ -9,25 +9,33 @@
 <body>
 
         <div class="it tyt">
-        <a target="_blank" href="https://github.com/3ti-2020/crud-wiele-do-wielu-artur-kuska"><img class='git' src="http://pngimg.com/uploads/github/github_PNG42.png"></a>
-                        <button class="btn">Top 5 memów poprzedniego mieciąca</button>
+            <div class="left">
+                <a target="_blank" href="https://github.com/3ti-2020/crud-wiele-do-wielu-artur-kuska"><img class='git' src="http://pngimg.com/uploads/github/github_PNG42.png"></a>
+               
+                <?php
+                session_start();
+                $a = isset($_SESSION['zalogowano_a']);
+                    if($a){
+                    ?>
+                    <form action="uwierzytelnie.php" method="get">
+                    <input type="hidden" name="akcja" value="wyloguj">
+                    <input class="btn2" type="submit" value="Wyloguj">
+                </form>
+                <?php
+                    }
+                ?>
+            </div>
+            <div class="right">
+                <a href="./logowanie/logowanie.php"><button class="btn">Zaloguj się</button></a>
+                <button class="btn">Top 5 memów poprzedniego mieciąca</button>
 
-                <div class="images">
-                    <div class="all">
+            </div>
 
-                    <div class="top">
-                        <button type='button' class='zamknij'>X</button>
-                    </div>
-                    
-                    <div class="bot">
-                        <button type="button" class="btn prevBtn"><i class="fa fa-chevron-left"></i></button>
-                        <button type="button" class="btn nextBtn"><i class="fa fa-chevron-right"></i></button>
-                    </div>
-
-                    </div>
-
-                   </div>
-        </div>    
+                <!-- <div class="images">
+                    <button type="button" class="btn prevBtn"><i class="fa fa-chevron-left"></i></button>
+                    <button type="button" class="btn nextBtn"><i class="fa fa-chevron-right"></i></button>
+                </div> -->
+        </div>   
 
         <div class="it blg">
             <?php
@@ -62,9 +70,9 @@
 
             <div class="menu">
 
-                <form action="wyszukaj.php" method="post" class='form_tag'>
-                    <p class='in_s'>Wyszukaj taga:</p>
-                    <p>#<input type='text' name='wyszukaj' class='in_s'></p>
+                 <form action="wyszukaj.php" method="post" class='form_tag'>
+                    <p class='in_t'>Wyszukaj tag:</p>
+                    <p class='in_g'>#<input type='text' name='wyszukaj' class='in_t'></p>
                     <input type="submit" class='in_s' value='Wyszukaj'>
                 </form>
 

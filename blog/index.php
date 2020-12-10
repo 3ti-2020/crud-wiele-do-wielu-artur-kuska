@@ -27,7 +27,7 @@
                 $dbname = "EItVVUd8zl";
 
                 $conn = new mysqli($servername, $username, $password, $dbname);
-                $result = $conn->query("SELECT tekst, zdjecie FROM `lacz` JOIN tag ON tag.id = lacz.tag JOIN post on post.id = lacz.post");
+                $result = $conn->query("SELECT DISTINCT post.id, tekst, zdjecie FROM `lacz` JOIN tag ON tag.id = lacz.tag JOIN post on post.id = lacz.post");
                 $res2 = $conn->query("SELECT DISTINCT post.id, tag.tag as tag FROM `lacz` JOIN tag ON tag.id = lacz.tag JOIN post on post.id = lacz.post");
 
                 while($row=$result->fetch_assoc() ){
@@ -38,7 +38,7 @@
                             while($row2=$res2->fetch_assoc() ){
                                 echo(" <p class='opis_tag'>".$row2['tag']."</p>");
                             }
-                    echo("</div>".$row['zdjecie']."
+                            echo("</div><img src='".$row['zdjecie']."' class='zdj_p'>
                         </article>");
                 }
             ?>

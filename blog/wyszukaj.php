@@ -30,7 +30,7 @@
                 $wyszukaj = $_POST['wyszukaj'];
 
                 $conn = new mysqli($servername, $username, $password, $dbname);
-                $result = $conn->query("SELECT tekst, zdjecie, tag.tag as tags FROM `lacz` JOIN tag ON tag.id = lacz.tag JOIN post on post.id = lacz.post WHERE tags LIKE concat('#',$wyszukaj)");
+                $result = $conn->query("SELECT DISTINCT post.id, tekst, zdjecie, tag.tag FROM `lacz` JOIN tag ON tag.id = lacz.tag JOIN post on post.id = lacz.post where tag.tag like '_".$_POST['wyszukaj']."'");
                 $res2 = $conn->query("SELECT DISTINCT post.id, tag.tag as tag FROM `lacz` JOIN tag ON tag.id = lacz.tag JOIN post on post.id = lacz.post");
 
                 while($row=$result->fetch_assoc() ){
@@ -41,7 +41,7 @@
                             while($row2=$res2->fetch_assoc() ){
                                 echo(" <p class='opis_tag'>".$row2['tag']."</p>");
                             }
-                    echo("</div>".$row['zdjecie']."
+                    echo("</div><img src='".$row['zdjecie']."' class='zdj_p'>
                         </article>");
                 }
             ?>
@@ -57,6 +57,30 @@
                 <p>#<input type='text' name='wyszukaj' class='in_s'></p>
                 <input type="submit" class='in_s' value='Wyszukaj'>
             </form>
+
+            <?php
+                
+                // $servername = "remotemysql.com";
+                // $username = "EItVVUd8zl";
+                // $password = "MadGhgwbbw";
+                // $dbname = "EItVVUd8zl";
+
+                // $conn = new mysqli($servername, $username, $password, $dbname);
+
+                // $res2 = $conn->query("SELECT DISTINCT post.id, tag.tag as tag FROM `lacz` JOIN tag ON tag.id = lacz.tag JOIN post on post.id = lacz.post");
+
+
+                // echo("<form action='wyszukaj.php' method='post' class='form_tag_sel'>
+                //         <select name='wyszukaj' id=''>");
+
+                //     while($row=$res2->fetch_assoc() ){
+                //         echo(" <option value='".$row['tag']."'>".$row['tag']."</option>");
+                //     }
+
+                // echo("</select>
+                //     <input type='submit' class='in_s' value='Wyszukaj'>
+                //     </form>");
+            ?>
 
         </div>
         

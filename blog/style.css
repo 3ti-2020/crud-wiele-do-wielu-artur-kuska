@@ -6,11 +6,9 @@
 
 body{
     display: grid;
-    height: 100%;
     width: 100%;
     grid-template-columns: 5fr 1fr;
-    grid-template-rows: 2fr 10fr;
-    grid-gap: 5px;
+    grid-template-rows: 200px 10fr;
     grid-template-areas: 
     "a a"
     "b c";
@@ -21,6 +19,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 2.5px;
 }
 
 .tyt{
@@ -40,6 +39,15 @@ body{
 
 .pas{
     grid-area: c;
+    margin: 2.5px;
+}
+
+.menu{
+    height: 500px;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 
@@ -64,6 +72,7 @@ p{
     align-items: center;
     text-align: center;
     flex-direction: column;
+    position: fixed;
 }
 
 .images{
@@ -84,16 +93,19 @@ p{
 }
 
 .post{
-    height: 700px;
+    margin-top: 2rem;
+    height: 800px;
     width: 800px;
     background-color: #8BB3FC;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    margin-bottom: 10rem;
 }
 
 .zdj_p{
-    height: 90%;
+    height: 80%;
     width: 90%;
 }
 
@@ -104,9 +116,28 @@ p{
     margin-right: 2rem;
 }
 
-
 .git{
-    height: 100px;
     margin-left: 2rem;
+    height: 100px;
     width: 100px;
+}
+
+.opis{
+    font-size: 35px;
+    background-color: #8BB3FC;
+    margin-bottom: 0.5rem;
+}
+
+.opis_tag{
+    font-size: 35px;
+    background-color: #8BB3FC;
+    margin-right: 0.5rem;
+}
+
+.o_tag{
+    display: flex;
+    flex-direction: row;
+    font-size: 35px;
+    background-color: #8BB3FC;
+    margin-bottom: 0.5rem;
 }

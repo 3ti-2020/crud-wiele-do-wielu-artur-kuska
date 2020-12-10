@@ -10,7 +10,7 @@
 
         <div class="it tyt">
         <a target="_blank" href="https://github.com/3ti-2020/crud-wiele-do-wielu-artur-kuska"><img class='git' src="http://pngimg.com/uploads/github/github_PNG42.png"></a>
-                        <button class="btn">Top 5 memów poprzedniego mieciąca</button>
+                <button class="btn">Top 5 memów poprzedniego mieciąca</button>
 
                 <!-- <div class="images">
                     <button type="button" class="btn prevBtn"><i class="fa fa-chevron-left"></i></button>
@@ -19,6 +19,7 @@
         </div>    
 
         <div class="it blg">
+                       
             <?php
 
                 $servername = "remotemysql.com";
@@ -26,8 +27,10 @@
                 $password = "MadGhgwbbw";
                 $dbname = "EItVVUd8zl";
 
+                $wyszukaj = $_POST['wyszukaj'];
+
                 $conn = new mysqli($servername, $username, $password, $dbname);
-                $result = $conn->query("SELECT tekst, zdjecie FROM `lacz` JOIN tag ON tag.id = lacz.tag JOIN post on post.id = lacz.post");
+                $result = $conn->query("SELECT tekst, zdjecie, tag.tag as tags FROM `lacz` JOIN tag ON tag.id = lacz.tag JOIN post on post.id = lacz.post WHERE tags LIKE concat('#',$wyszukaj)");
                 $res2 = $conn->query("SELECT DISTINCT post.id, tag.tag as tag FROM `lacz` JOIN tag ON tag.id = lacz.tag JOIN post on post.id = lacz.post");
 
                 while($row=$result->fetch_assoc() ){
@@ -47,15 +50,15 @@
 
         <div class="pas">
 
-            <div class="menu">
+        <div class="menu">
 
-                <form action="wyszukaj.php" method="post" class='form_tag'>
-                    <p class='in_s'>Wyszukaj taga:</p>
-                    <p>#<input type='text' name='wyszukaj' class='in_s'></p>
-                    <input type="submit" class='in_s' value='Wyszukaj'>
-                </form>
+            <form action="wyszukaj.php" method="post" class='form_tag'>
+                <p class='in_s'>Wyszukaj taga:</p>
+                <p>#<input type='text' name='wyszukaj' class='in_s'></p>
+                <input type="submit" class='in_s' value='Wyszukaj'>
+            </form>
 
-            </div>
+        </div>
         
         </div>
 </body>

@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     background-color: #21FFF7;
+    font-family: fantasy;
 }
 
 body{
@@ -177,6 +178,20 @@ p{
 .zdj_p{
     height: 80%;
     width: 90%;
+}
+
+.gif{
+    height: 80%;
+    width: 90%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.zdj_g{
+    height: 50%;
+    width: 50%;
 }
 
 .btn{

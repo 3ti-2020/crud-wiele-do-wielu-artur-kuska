@@ -39,15 +39,56 @@
             </div>
         </div>     
 
-        <div class="it blg"></div>
+        <div class="it blg">
+                <?php
+                $a = isset($_SESSION['zalogowano_a']);
+                    if($a){
+                    ?>
+        
+            <div class="container">
+
+                    <form action="ins_al.php" method="post" class='ins_p'>
+                <div class="in_post">
+
+                        <p class='tyt_in'>Treść nowego wpisu:</p>
+
+                        <textarea name="tekst" id="tekst" class="tekst" placeholder='Treść opisu'></textarea>
+                        <input name="zdjecie" class='in_p' type='file' accept='image/*'>
+
+                        
+                
+                </div>
+            
+                <div class="in_tag">
+                        <p class='tyt_in'>Dodaj tag:</p>
+                        
+                        <input name="tag" class='in_p' type='text' accept='image/*'>
+                        <input type="submit" value="Dodaj" class='submit'>
+
+                </div>
+
+                <div class="in_lacz">
+
+                        <p class='tyt_in'>Dodaj parę:</p>
+                        
+                        <input name="tag" class='in_p' type='text' accept='image/*'>
+
+                   
+
+                </div>
+
+            </div>
+            </form>
+            <?php
+                    }
+                ?>
+        </div>
 
     <div class="pas">
 
             <?php
                 $a = !isset($_SESSION['zalogowano_a']);
-                $u = !isset($_SESSION['zalogowano_u']);
-                $e = !isset($_SESSION['zalogowano_e']);
-                if($a && $u && $e){
+                if($a){
             ?>
 
             <form action="uwierzytelnie.php" method="post" class="zaloguj">
@@ -77,6 +118,7 @@
             
             <?php
                 // }
+
             ?>
 
     
@@ -86,3 +128,12 @@
 </body>
     <script src="main.js"></script>
 </html>
+
+
+<!-- 
+                INSERT INTO `lacz`(`id`, `tag`, `post`) VALUES ([value-1],[value-2],[value-3])
+
+                INSERT INTO `tag`(`id`, `tag`) VALUES ([value-1],[value-2])
+
+                INSERT INTO `post`(`id`, `tekst`, `zdjecie`) VALUES ([value-1],[value-2],[value-3])
+ -->

@@ -12,3 +12,10 @@ newAcc.addEventListener("click", function(){
     zaloguj.style.display = "none";
     newAcc.style.display= "none";
 })
+
+let post = document.getElementById('post');
+
+post.addEventListener('dragenter', handlerFunction, false);
+post.addEventListener('dragleave', handlerFunction, false);
+post.addEventListener('dragover', handlerFunction, false);
+post.addEventListener('drop', handlerFunction, false);

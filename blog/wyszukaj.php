@@ -59,8 +59,17 @@
                             while($row2=$res2->fetch_assoc() ){
                                 echo(" <p class='opis_tag'>".$row2['tag']."</p>");
                             }
-                            echo("</div><img src='".$row['zdjecie']."' class='zdj_p'>
-                        </article>");
+                            echo("</div>");
+
+                            $zdj = $row['zdjecie'];
+
+                            if(file_exists($zdj)){
+                                echo("<img src='". $row['zdjecie']."' class='zdj_p'>");
+                            }else{
+                                echo("<div class='gif'><img src='czekaj.gif' class='zdj_g'></div>");
+                            }
+
+                        echo("</article>");
                 }
             ?>
             

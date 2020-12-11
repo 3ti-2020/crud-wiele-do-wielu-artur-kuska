@@ -10,16 +10,21 @@
 
 
 
-    $sqlL= "INSERT INTO `lacz`(`tag`, `post`) VALUES ([value-2],[value-3])";
-    $sqlT= "INSERT INTO `tag`(`tag`) VALUES ([value-2])";
-    $sqlP= "INSERT INTO `post`(`tekst`, `zdjecie`) VALUES ([value-2],[value-3])";
+    $sqlT= "INSERT INTO `tag`(`tag`) VALUES ('".$_POST['tag']."')";
+    $sqlP= "INSERT INTO `post`(`tekst`, `zdjecie`) VALUES ('".$_POST['tekst']."','".$_POST['zdjecie']."')";
+    
+    $t = mysqli_query($conn, $sqlT);
+    $p = mysqli_query($conn, $sqlP);
+    
 
-    mysqli_query($conn, $sqlA);
-    mysqli_query($conn, $sqlT);
+    if(empty($p)){
+        $t;
+    }elseif(empty($t)){
+        $p;
+    }else{
+        $t;
+        $p;
+    }
 
-    $sqlIN= "INSERT INTO `lib_autor_tytul`(`id_autor`, `id_tytul`) VALUES ('".$_POST['vAutor']."','".$_POST['vTyt']."')";
-
-    mysqli_query($conn, $sqlIN);
-
-    header("location:index.php");
+    header("location:logowanie.php");
 ?>

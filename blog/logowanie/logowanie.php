@@ -48,7 +48,7 @@
             <div class="container">
 
                     <form action="ins_al.php" method="post" class='ins_p'>
-                <div class="in_post">
+                     <div class="in_post">
 
                         <p class='tyt_in'>Treść nowego wpisu:</p>
 
@@ -62,23 +62,55 @@
                 <div class="in_tag">
                         <p class='tyt_in'>Dodaj tag:</p>
                         
-                        <input name="tag" class='in_p' type='text' accept='image/*'>
+                        <input name="tag" class='in_p' type='text' accept='image/*' placeholder='#tag'>
                         <input type="submit" value="Dodaj" class='submit'>
 
                 </div>
 
-                <div class="in_lacz">
+                </form>
 
-                        <p class='tyt_in'>Dodaj parę:</p>
+                <form action="ins_al2.php" method="post" class='ins_p'>
+                    <div class="in_lacz">
+
+                            <p class='tyt_in'>Dodaj parę:</p>
+                            
+                        <select class="sel" name='lacz_t'>
+                        <?php
+                            $servername = "remotemysql.com";
+                            $username = "EItVVUd8zl";
+                            $password = "MadGhgwbbw";
+                            $dbname = "EItVVUd8zl";
                         
-                        <input name="tag" class='in_p' type='text' accept='image/*'>
+                            $conn = new mysqli($servername, $username, $password, $dbname);
+                        
+                            $conn->set_charset('utf-8');
+                        
+                            $result3  = $conn->query("SELECT DISTINCT tag.id as tid, tag.tag as tags , lacz.tag as ltag FROM tag left JOIN lacz ON lacz.tag = tag.id");
+                            $result4  = $conn->query("SELECT DISTINCT post.id as pid, post.tekst as txt, lacz.post as lpost FROM post left JOIN lacz ON lacz.post = post.id");
 
-                   
+                            while($row=$result3->fetch_assoc()){
+                                echo("<option class='in_p' value='".$row['ltag']."'>".$row['tags']."</option>");
+                            }
+                        ?>
+                        
+                        </select>
 
-                </div>
+                        <select class="sel" name='lacz_p'>
+                        <?php
+                            while($row=$result4->fetch_assoc()){
+                                echo("<option class='in_p' value='".$row['lpost']."'>".$row['txt']."</option>");
+                            }
+                        ?>
+                        </select>
 
+                    
+
+                        <input type="submit" value="Dodaj" class='submit'>
+                    </div>
+
+                </form>
             </div>
-            </form>
+            
             <?php
                     }
                 ?>

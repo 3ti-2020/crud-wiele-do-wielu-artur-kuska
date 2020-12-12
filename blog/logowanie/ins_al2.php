@@ -35,5 +35,5 @@
     }
 
 
-    header("location:./../index.php");
+    header("location:logowanie.php");
 ?>

@@ -53,7 +53,7 @@
                         <p class='tyt_in'>Treść nowego wpisu:</p>
 
                         <textarea name="tekst" id="tekst" class="tekst" placeholder='Treść opisu'></textarea>
-                        <input name="zdjecie" class='in_p' type='file' accept='image/*'>
+                        <input name="zdjecie" class='in_p' type='file' value='null' accept='image/*'>
 
                         
                 

@@ -9,76 +9,49 @@
     $conn->set_charset('utf-8');
 
 
-
-    $sqlL= "INSERT INTO `lacz`(`tag`, `post`) VALUES ('".$_POST['lacz_t']."','".$_POST['lacz_p']."')";
     $sqlT= "INSERT INTO `tag`(`tag`) VALUES ('".$_POST['tag']."')";
     $sqlP= "INSERT INTO `post`(`tekst`, `zdjecie`) VALUES ('".$_POST['tekst']."','".$_POST['zdjecie']."')";
 
-    $l_t = $_POST['lacz_t'];
-    $l_p = $_POST['lacz_p'];
     $t_t = $_POST['tag'];
     $txt = $_POST['tekst'];
     $zdj = $_POST['zdjecie'];
 
-    $l = mysqli_query($conn, $sqlL);
-    $t = mysqli_query($conn, $sqlT);
-    $p = mysqli_query($conn, $sqlP);
-
-    $c = mysqli_close($conn);
-
-    if(isset($l_t)){
-        if(isset($l_p)){
-            $l;
-        }
-    }else{
-        $c;
+    if(empty($t_t) && empty($txt) && empty($zdj)){
+        echo("1.<br>");
+        echo("nic");
+        mysqli_close($conn);
+    }elseif(empty($t_t) && isset($txt) && isset($zdj)){
+        echo("2.<br>");
+        echo($txt);
+        echo("<br>");
+        echo("<br>");
+        echo($zdj);
+        echo("<br>");
+        echo("<br>");
+        echo("post");
+        mysqli_query($conn, $sqlP);
+    }elseif(isset($t_t) && empty($txt) && empty($zdj)){
+        echo("3.<br>");
+        echo($t_t);
+        echo("<br>");
+        echo("<br>");
+        echo("tag");
+        mysqli_query($conn, $sqlT);
+    }elseif(isset($t_t) && isset($txt) && isset($zdj)){
+        echo("4.<br>");
+        echo($t_t);
+        echo("<br>");
+        echo("<br>");
+        echo($txt);
+        echo("<br>");
+        echo("<br>");
+        echo($zdj);
+        echo("<br>");
+        echo("<br>");
+        echo("wsio");
+        mysqli_query($conn, $sqlT);
+        mysqli_query($conn, $sqlP);
     }
-
-
-
-    // if(isset($l_t) && isset($l_p)){
-    //     $l;
-    // }else{
-    //     $c;
-    // }
-
-    // if(isset($t_t)){
-    //     $t;
-    // }else{
-    //     $c;
-    // }
-
-
-    // if(isset($txt) && isset($zdj)){
-    //     $p;
-    // }else{
-    //     $c;
-    // }
-
-
-    
-
-
-    // if(empty($l && $t)){
-    //     $p;
-    // }elseif(empty($l && $p)){
-    //     $t;
-    // }elseif(empty($p && $t)){
-    //     $l;
-    // }elseif(empty($l)){
-    //     $t;
-    //     $p;
-    // }elseif(empty($p)){
-    //     $t;
-    //     $l;
-    // }elseif(empty($t)){
-    //     $p;
-    //     $l;
-    // }else{
-    //     $t;
-    //     $p;
-    //     $l;
-    // }
 
     header("location:logowanie.php");
 ?>

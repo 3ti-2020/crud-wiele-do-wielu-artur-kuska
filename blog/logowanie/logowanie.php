@@ -67,9 +67,9 @@
 
                 </div>
 
-                </form>
+                <!-- </form>
 
-                <form action="ins_al2.php" method="post" class='ins_p'>
+                <form action="ins_al2.php" method="post" class='ins_p'> -->
                     <div class="in_lacz">
 
 
@@ -89,23 +89,29 @@
                                 
                                 $result4  = $conn->query("SELECT DISTINCT post.id as pid, post.tekst as txt, lacz.post as lpost FROM post left JOIN lacz ON lacz.post = post.id");
 
+                                $n_post= 1;
                                     echo("<option class='in_p'>Wybierz</option>");
                                 while($row=$result4->fetch_assoc()){
-                                    echo("<option class='in_p' value=".$row['lpost'].">".$row['txt']."</option>");
+                                    echo("<option class='in_p' value=".$row['lpost']."> ".$row['txt']."</option>");
+                                    $n_post= $n_post+1;
                                 }
+                                echo("<option class='in_p' value=".$n_post."> Nowy post</option>");
                             ?>
                         </select>
 
                         <?php
                             $result3  = $conn->query("SELECT * from tag");
                             
+                            $n_tag= 1;
                             while($row=$result3->fetch_assoc()){
-                                echo("<div><input type='checkbox' name='tags[]' value='".$row['id']."'>".$row['tag']."</div>");
+                                echo("<div><input type='checkbox' name='tags[]' value='".$row['id']."'> ".$row['tag']."</div>");
+                                $n_tag=$n_tag+1;
                             }
+                            echo("<div><input type='checkbox' name='tags[]' value=".$n_tag."> Nowy tag</div>");
 
                         ?>
 
-                        <input type="submit" value="Dodaj" class='submit'>
+                        <!-- <input type="submit" value="Dodaj" class='submit'> -->
                     </div>
 
                 </form>

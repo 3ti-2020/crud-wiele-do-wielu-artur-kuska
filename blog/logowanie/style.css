@@ -330,6 +330,21 @@ p{
     flex-direction: column;
 }
 
+.pole_style{
+    font-size: 15px;
+    height: 30px;
+    font-family: monospace;
+    font-weight: 600;
+}
+
+.pole_style2{
+    font-size: 15px;
+    height: 30px;
+    width: 250px;
+    font-family: monospace;
+    font-weight: 600;
+}
+
 .in_lacz{
     height: 100%;
     width: 30%;
@@ -345,18 +360,16 @@ p{
     height: 100px;
     width: 253px;
     text-align: center;
-    /* background-color: #FCBE12; */
 }
 
 .in_p{
     margin-top: 1rem;
     text-align: center;
-    /* background-color: #FCBE12; */
 }
 
 .tyt_in{
-    margin-bottom: 1rem;
-    /* background-color: #FCBE12; */
+    margin-bottom: 3rem;
+    font-size: 30px;
 }
 
 .container{
@@ -378,4 +391,25 @@ p{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+}
+
+.list_tag{
+    margin-top: 1rem;
+    width: 150px;
+    height: 200px;
+    overflow: scroll;
+}
+
+.list_tag_in{
+    width: 100%;
+}
+
+.subtop{
+    position: absolute;
+    bottom: 6%;
+}
+
+.ramka{
+    height: 50%;
+    border: solid 5px #FCBE12;
 }

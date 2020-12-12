@@ -81,37 +81,12 @@
             <div class="strg">
                  <form action="wyszukaj.php" method="post" class='form_tag'>
                     <p class='in_t'>Wyszukaj tag:</p>
-                    <p class='in_g'>#<input type='text' name='wyszukaj' class='in_t'></p>
+                    <p class='in_g'>#<input type='text' name='wyszukaj'  class='in_t2'></p>
                     <input type="submit" class='in_s' value='Wyszukaj'>
                 </form>
 
                 <a href="index.php"><button class='in_s'>Meme oś</button></a>
             </div>
-           
-
-            <?php
-                
-                // $servername = "remotemysql.com";
-                // $username = "EItVVUd8zl";
-                // $password = "MadGhgwbbw";
-                // $dbname = "EItVVUd8zl";
-
-                // $conn = new mysqli($servername, $username, $password, $dbname);
-
-                // $res2 = $conn->query("SELECT DISTINCT post.id, tag.tag as tag FROM `lacz` JOIN tag ON tag.id = lacz.tag JOIN post on post.id = lacz.post");
-
-
-                // echo("<form action='wyszukaj.php' method='post' class='form_tag_sel'>
-                //         <select name='wyszukaj' id=''>");
-
-                //     while($row=$res2->fetch_assoc() ){
-                //         echo(" <option value='".$row['tag']."'>".$row['tag']."</option>");
-                //     }
-
-                // echo("</select>
-                //     <input type='submit' class='in_s' value='Wyszukaj'>
-                //     </form>");
-            ?>
 
         </div>
         

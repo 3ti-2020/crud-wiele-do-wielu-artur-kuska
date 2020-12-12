@@ -81,7 +81,7 @@
             <div class="strg">
                  <form action="wyszukaj.php" method="post" class='form_tag'>
                     <p class='in_t'>Wyszukaj tag:</p>
-                    <p class='in_g'>#<input type='text' name='wyszukaj' class='in_t'></p>
+                    <p class='in_g'>#<input type='text' name='wyszukaj' class='in_t2'></p>
                     <input type="submit" class='in_s' value='Wyszukaj'>
                 </form>
             </div>

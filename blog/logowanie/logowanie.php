@@ -13,29 +13,23 @@
                 <a target="_blank" href="https://github.com/3ti-2020/crud-wiele-do-wielu-artur-kuska"><img class='git' src="http://pngimg.com/uploads/github/github_PNG42.png"></a>
 
                 <?php
-                session_start();
-                $a = isset($_SESSION['zalogowano_a']);
-                    if($a){
-                    ?>
-                    <form action="uwierzytelnie.php" method="get">
-                    <input type="hidden" name="akcja" value="wyloguj">
-                    <input class="btn2" type="submit" value="Wyloguj">
-                </form>
-                <?php
-                    }
+                    session_start();
+                    $a = isset($_SESSION['zalogowano_a']);
+                        if($a){
+                        ?>
+                        <form action="uwierzytelnie.php" method="get">
+                        <input type="hidden" name="akcja" value="wyloguj">
+                        <input class="btn2" type="submit" value="Wyloguj">
+                    </form>
+                    <?php
+                        }
                 ?>
             </div>
 
-            <div class="right">
-                <a href="../index.php"><button class="btn">Meme oś</button></a>
-                <button class="btn">Top 5 memów poprzedniego mieciąca</button>
+                <div class="right">
+                    <a href="../index.php"><button class="btn">Meme oś</button></a>
+                </div>
 
-            </div>
-
-                    <!-- <div class="images">
-                        <button type="button" class="btn prevBtn"><i class="fa fa-chevron-left"></i></button>
-                        <button type="button" class="btn nextBtn"><i class="fa fa-chevron-right"></i></button>
-                    </div> -->
             </div>
         </div>     
 
@@ -48,35 +42,31 @@
             <div class="container">
 
                     <form action="ins_al.php" method="post" class='ins_p'>
-                     <div class="in_post">
+                     <div class="ramka in_post">
 
-                        <p class='tyt_in'>Treść nowego wpisu:</p>
+                        <p class='tyt_in'>Nowy post:</p>
 
-                        <textarea name="tekst" id="tekst" class="tekst" placeholder='Treść opisu'></textarea>
-                        <input name="zdjecie" class='in_p' type='file' value='null' accept='image/*'>
+                        <textarea name="tekst" id="tekst" class="tekst pole_style" placeholder='Treść opisu'></textarea>
+                        <input name="zdjecie" class='in_p pole_style2' type='file' value='null' accept='image/*'>
 
                         
                 
                 </div>
             
-                <div class="in_tag">
-                        <p class='tyt_in'>Dodaj tag:</p>
+                <div class="ramka in_tag">
+                    <p class='tyt_in'>Nowy tag:</p>
                         
-                        <input name="tag" class='in_p' type='text' accept='image/*' placeholder='#tag'>
-                        <input type="submit" value="Dodaj" class='submit'>
+                    <input name="tag" class='in_p pole_style' type='text' placeholder='#tag'>
+                    <input type="submit" value="Dodaj" class='submit subtop'>
 
                 </div>
 
-                <!-- </form>
-
-                <form action="ins_al2.php" method="post" class='ins_p'> -->
-                    <div class="in_lacz">
+                    <div class="ramka in_lacz">
 
 
-                            <p class='tyt_in'>Dodaj parę:</p>
+                            <p class='tyt_in'>Wyswietl:</p>
                             
-
-                        <select class="sel" name='lacz_p'>
+                        <select class="sel pole_style" name='lacz_p'>
                             <?php
                                 $servername = "remotemysql.com";
                                 $username = "EItVVUd8zl";
@@ -90,15 +80,16 @@
                                 $result4  = $conn->query("SELECT DISTINCT post.id as pid, post.tekst as txt, lacz.post as lpost FROM post left JOIN lacz ON lacz.post = post.id");
 
                                 $n_post= 1;
-                                    echo("<option class='in_p'>Wybierz</option>");
+
+                                    echo("<option class='in_p pole_style'>Wybierz</option>");
                                 while($row=$result4->fetch_assoc()){
-                                    echo("<option class='in_p' value=".$row['lpost']."> ".$row['txt']."</option>");
+                                    echo("<option class='in_p pole_style' value=".$row['lpost']."> ".$row['txt']."</option>");
                                     $n_post= $n_post+1;
                                 }
-                                echo("<option class='in_p' value=".$n_post."> Nowy post</option>");
+                                echo("<option class='in_p pole_style' value=".$n_post."> Nowy post</option>");
                             ?>
                         </select>
-
+                        <div class="list_tag">
                         <?php
                             $result3  = $conn->query("SELECT * from tag");
                             
@@ -111,7 +102,8 @@
 
                         ?>
 
-                        <!-- <input type="submit" value="Dodaj" class='submit'> -->
+                        </div>
+
                     </div>
 
                 </form>
@@ -149,14 +141,6 @@
 
             <?php
                 }
-                // elseif(isset($_SESSION['fail'])){
-            ?>
-             
-            <!-- <p class='blad' >Niestety nie udało Ci się zalogować.<br>Sprawdź poprawność danych</p> -->
-            
-            <?php
-                // }
-
             ?>
 
     
@@ -166,12 +150,3 @@
 </body>
     <script src="main.js"></script>
 </html>
-
-
-<!-- 
-                INSERT INTO `lacz`(`id`, `tag`, `post`) VALUES ([value-1],[value-2],[value-3])
-
-                INSERT INTO `tag`(`id`, `tag`) VALUES ([value-1],[value-2])
-
-                INSERT INTO `post`(`id`, `tekst`, `zdjecie`) VALUES ([value-1],[value-2],[value-3])
- -->

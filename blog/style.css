@@ -81,7 +81,16 @@ body{
     border-radius: 20px;
     height: 50px;
     width: 200px;
-    font-size: larger;
+    font-size: 30px;
+}
+
+.in_t2{
+    border-radius: 20px;
+    height: 50px;
+    width: 200px;
+    font-size: 30px;
+    font-family: monospace;
+    font-weight: 600;
 }
 
 .in_g{

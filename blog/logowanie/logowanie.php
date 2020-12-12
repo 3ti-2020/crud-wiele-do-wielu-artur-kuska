@@ -72,38 +72,38 @@
                 <form action="ins_al2.php" method="post" class='ins_p'>
                     <div class="in_lacz">
 
+
                             <p class='tyt_in'>Dodaj parę:</p>
                             
-                        <select class="sel" name='lacz_t'>
-                        <?php
-                            $servername = "remotemysql.com";
-                            $username = "EItVVUd8zl";
-                            $password = "MadGhgwbbw";
-                            $dbname = "EItVVUd8zl";
-                        
-                            $conn = new mysqli($servername, $username, $password, $dbname);
-                        
-                            $conn->set_charset('utf-8');
-                        
-                            $result3  = $conn->query("SELECT DISTINCT tag.id as tid, tag.tag as tags , lacz.tag as ltag FROM tag left JOIN lacz ON lacz.tag = tag.id");
-                            $result4  = $conn->query("SELECT DISTINCT post.id as pid, post.tekst as txt, lacz.post as lpost FROM post left JOIN lacz ON lacz.post = post.id");
-
-                            while($row=$result3->fetch_assoc()){
-                                echo("<option class='in_p' value='".$row['ltag']."'>".$row['tags']."</option>");
-                            }
-                        ?>
-                        
-                        </select>
 
                         <select class="sel" name='lacz_p'>
-                        <?php
-                            while($row=$result4->fetch_assoc()){
-                                echo("<option class='in_p' value='".$row['lpost']."'>".$row['txt']."</option>");
-                            }
-                        ?>
+                            <?php
+                                $servername = "remotemysql.com";
+                                $username = "EItVVUd8zl";
+                                $password = "MadGhgwbbw";
+                                $dbname = "EItVVUd8zl";
+                            
+                                $conn = new mysqli($servername, $username, $password, $dbname);
+                            
+                                $conn->set_charset('utf-8');
+                                
+                                $result4  = $conn->query("SELECT DISTINCT post.id as pid, post.tekst as txt, lacz.post as lpost FROM post left JOIN lacz ON lacz.post = post.id");
+
+                                    echo("<option class='in_p'>Wybierz</option>");
+                                while($row=$result4->fetch_assoc()){
+                                    echo("<option class='in_p' value=".$row['lpost'].">".$row['txt']."</option>");
+                                }
+                            ?>
                         </select>
 
-                    
+                        <?php
+                            $result3  = $conn->query("SELECT * from tag");
+                            
+                            while($row=$result3->fetch_assoc()){
+                                echo("<div><input type='checkbox' name='tags[]' value='".$row['id']."'>".$row['tag']."</div>");
+                            }
+
+                        ?>
 
                         <input type="submit" value="Dodaj" class='submit'>
                     </div>

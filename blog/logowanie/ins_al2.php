@@ -8,9 +8,32 @@
 
     $conn->set_charset('utf-8');
 
-    $sqlL= "INSERT INTO `lacz`(`tag`, `post`) VALUES ('".$_POST['lacz_t']."','".$_POST['lacz_p']."')";
+    $tagi = $_POST['tags'];
 
-    mysqli_query($conn, $sqlL);
+    $n = count($tagi);
 
-    header("location:logowanie.php");
+    echo($n);
+    echo("<br>");
+    echo("<br>");
+    
+    $pol = $conn->query("SELECT DISTINCT post.id as pid, post.tekst as txt, lacz.post as lpost FROM post JOIN lacz ON lacz.post = post.id");
+
+    $nowy_post = 1;
+    
+    while($row=$pol->fetch_assoc()){
+        $nowy_post = $nowy_post+1;
+    }
+    for($i=0; $i<$n; $i++){
+        $tag = intval($tagi[$i]);
+        $sql = "INSERT INTO `lacz`(`tag`, `post`) VALUES ('".$tag."','".$_POST['lacz_p']."')";
+        if($_POST['lacz_p']==0){
+            $sql = "INSERT INTO `lacz`(`tag`, `post`) VALUES ('".$tag."','".$nowy_post."')";
+            mysqli_query($conn, $sql);
+        }else{
+            mysqli_query($conn, $sql);
+        }
+    }
+
+
+    header("location:./../index.php");
 ?>

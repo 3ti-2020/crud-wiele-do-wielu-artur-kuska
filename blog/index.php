@@ -78,12 +78,37 @@
         <div class="pas">
 
             <div class="menu">
-            <div class="strg">
-                 <form action="wyszukaj.php" method="post" class='form_tag'>
-                    <p class='in_t'>Wyszukaj tag:</p>
-                    <p class='in_g'>#<input type='text' name='wyszukaj' class='in_t2'></p>
-                    <input type="submit" class='in_s' value='Wyszukaj'>
-                </form>
+                <div class="strg">
+                            <p class='tyt_tags'>Lista istniejących tagów</p>
+                            <div class="list_tag">
+                            <?php
+                                $result3  = $conn->query("SELECT * from tag");
+                                
+                                $n_tag= 1;
+                                while($row=$result3->fetch_assoc()){
+                                    echo("<div>".$row['tag']."</div>");
+                                    $n_tag=$n_tag+1;
+                                }
+                            ?>
+
+                            </div>
+                    <form action="wyszukaj.php" method="post" class='form_tag'>
+                        <p class='in_t'>Wyszukaj tag:</p>
+                        <p class='in_g'>#<input type='text' name='wyszukaj' class='in_t2'></p>
+                        <input type="submit" class='in_s' value='Wyszukaj'>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="sponsor">
+                <p class='margines'>Sponsor strategiczny Bmemelogu:</p>
+
+                <img src='sponsor.gif' class='zdj_gif'>
+                <div class="spons">
+                <p>Pośrednictwo Ubezpieczeniowe Grzegorz Kuśka</p>
+                <p>tel: 783294001</p>
+                <p>44-190 Knurów, ul. Dworcowa 38a</p>
             </div>
 
             </div>

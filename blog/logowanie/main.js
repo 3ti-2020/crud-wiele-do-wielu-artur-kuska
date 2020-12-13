@@ -1,3 +1,8 @@
+
+function powiadomienie() {
+    alert("Login: a Hasło: a");
+}
+
 const newAcc = document.querySelector(".newAcc");
 const rejestracja = document.querySelector(".rejestracja");
 const nowe_konto = document.querySelector(".nowe_konto");

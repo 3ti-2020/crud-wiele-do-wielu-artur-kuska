@@ -13,6 +13,7 @@
                 <a target="_blank" href="https://github.com/3ti-2020/crud-wiele-do-wielu-artur-kuska"><img class='git' src="http://pngimg.com/uploads/github/github_PNG42.png"></a>
 
                 <?php
+
                     session_start();
                     $a = isset($_SESSION['zalogowano_a']);
                         if($a){
@@ -64,7 +65,7 @@
                     <div class="ramka in_lacz">
 
 
-                            <p class='tyt_in'>Wyswietl:</p>
+                            <p class='tyt_in'>Dodaj:</p>
                             
                         <select class="sel pole_style" name='lacz_p'>
                             <?php
@@ -126,6 +127,9 @@
                 <input class="btn3" type="password" name="haslo" placeholder="haslo">
                 <input class="btn3" type="submit" value="Zaloguj">
             </form>
+                <div class="zaloguj">
+                    <button class="btn3 lewo" onclick="powiadomienie()">Info</button>
+                </div>
                 
             <?php
                     }elseif(isset($_SESSION['zalogowano_a'])){

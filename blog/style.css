@@ -8,8 +8,8 @@
 body{
     display: grid;
     width: 100%;
-    grid-template-columns: 5fr 1fr;
-    grid-template-rows: 150px 10fr;
+    grid-template-columns: 8fr 2fr;
+    grid-template-rows: 150px 1fr;
     grid-template-areas: 
     "a a"
     "b c";
@@ -203,6 +203,11 @@ p{
     width: 50%;
 }
 
+.zdj_gif{
+    height: 150px;
+    width: 300px;
+}
+
 .btn{
     font-size: large;
     font-weight: 600;
@@ -269,6 +274,46 @@ p{
     text-align: center;
     flex-direction: column;
     position: fixed;
+}
+
+.sponsor{
+    margin-left: 0.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    position: fixed;
+}
+
+.spons{
+    display: flex;
+    width: 22rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.margines{
+    margin-bottom: 2rem;
+}
+
+.list_tag{
+    margin-top: 1rem;
+    width: 150px;
+    height: 150px;
+    overflow: scroll;
+    margin-bottom: 2rem;
+}
+
+.tyt_tags{
+    font-size: larger;
+    margin-bottom: 0.5rem;
+}
+
+.lewo{
+    margin: auto;
 }
 
 @keyframes bgc {

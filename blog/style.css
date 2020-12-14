@@ -25,7 +25,7 @@ body{
 
 .tyt{
     grid-area: a;
-    background-image: url(logo.png);
+    background-image: url(./zdjecia/logo.png);
     background-repeat: no-repeat;
     background-size: auto;
     background-position: center;

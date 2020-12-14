@@ -56,8 +56,8 @@
                 $resultX = $conn->query("SELECT tag FROM `tag` WHERE tag like '_".$_POST['wyszukaj']."'");
 
 
-                while($row=$result3->fetch_assoc()){
-                    $tablica[$tagi] = $row['tag'];
+                // while($row=$result3->fetch_assoc()){
+                //     $tablica[$tagi] = $row['tag'];
                     // echo($tagi." ".$tablica[$tagi]."<br>");
                     // $tagi++;
                 // }
@@ -91,8 +91,8 @@
 
                         $zdj = $row['zdjecie'];
 
-                        if(file_exists($zdj)){
-                            echo("<img src='". $row['zdjecie']."' class='zdj_p'>");
+                        if("./zdjecie/".file_exists($zdj)){
+                            echo("<img src='./zdjecia/". $row['zdjecie']."' class='zdj_p'>");
                         }else{
                             echo("<div class='gif'><img src='./zdjecia/czekaj.gif' class='zdj_g'></div>");
                         }
@@ -100,8 +100,8 @@
                         echo("</article>");
                     }
                 }
-                $tagi++;
-            }
+            //     $tagi++;
+            // }
             ?>
             
         </div>
@@ -128,6 +128,8 @@
                         <p class='in_g'>#<input type='text' name='wyszukaj' class='in_t2'></p>
                         <input type="submit" class='in_s' value='Wyszukaj'>
                     </form>
+
+                    <a href="index.php"><button class='in_s'>Meme oś</button></a>
                 </div>
 
             </div>
@@ -135,7 +137,7 @@
             <div class="sponsor">
                 <p class='margines'>Sponsor strategiczny Bmemelogu:</p>
 
-                <img src='sponsor.gif' class='zdj_gif'>
+                <img src='./zdjecia/sponsor.gif' class='zdj_gif'>
                 <div class="spons">
                 <p>Pośrednictwo Ubezpieczeniowe Grzegorz Kuśka</p>
                 <p>tel: 783294001</p>

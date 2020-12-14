@@ -56,52 +56,50 @@
                 $resultX = $conn->query("SELECT tag FROM `tag` WHERE tag like '_".$_POST['wyszukaj']."'");
 
 
-                // while($row=$result3->fetch_assoc()){
-                //     $tablica[$tagi] = $row['tag'];
-                    // echo($tagi." ".$tablica[$tagi]."<br>");
-                    // $tagi++;
-                // }
+                $numer=0;
 
-                // $n = array(
-                // for($i=0;$i<$tagi;$i++){
-                //     echo($tablica[$i]);
-                   
-                // })
+                while ($row=$result3->fetch_assoc()) {
+                     if("#".$_POST['wyszukaj']==$row['tag']){
 
-                if($_POST['wyszukaj']=="" || $_POST['wyszukaj']==" " || $_POST['wyszukaj']=="a"){
-
-                    echo("<article class='post'>
-
-                            <p class='n_tag'> Nie ma takeigo tag'a w bazie</p>");
-
-                    echo("</article>");
-
-                }elseif($_POST['wyszukaj']=!""){
+                        $numer=1;
+                
+                    }
+                };
+                
+                if($numer==1){
                     while($row=$result->fetch_assoc() ){
+    
+                            echo("<article class='post'>
+                                <p class='opis'>".$row['tekst']."</p>");
+                                $res2 = $conn->query("SELECT lacz.id, post.id, post.zdjecie, tag.tag as tag FROM `lacz` JOIN tag ON tag.id = lacz.tag JOIN post on post.id = lacz.post where post.id=".$row['pid']);
+    
+                            echo("<div class='o_tag'>");
+                                while($row2=$res2->fetch_assoc() ){
+                                    echo(" <p class='opis_tag'>".$row2['tag']."</p>");
+                                }
+                            echo("</div>");
+    
+                            $zdj = $row['zdjecie'];
+    
+                            if("./zdjecie/".file_exists($zdj)){
+                                echo("<img src='./zdjecia/". $row['zdjecie']."' class='zdj_p'>");
+                            }else{
+                                echo("<div class='gif'><img src='./zdjecia/czekaj.gif' class='zdj_g'></div>");
+                            }
+    
+                            echo("</article>");
+
+
+                    }}else{
 
                         echo("<article class='post'>
-                            <p class='opis'>".$row['tekst']."</p>");
-                            $res2 = $conn->query("SELECT lacz.id, post.id, post.zdjecie, tag.tag as tag FROM `lacz` JOIN tag ON tag.id = lacz.tag JOIN post on post.id = lacz.post where post.id=".$row['pid']);
-
-                        echo("<div class='o_tag'>");
-                            while($row2=$res2->fetch_assoc() ){
-                                echo(" <p class='opis_tag'>".$row2['tag']."</p>");
-                            }
-                        echo("</div>");
-
-                        $zdj = $row['zdjecie'];
-
-                        if("./zdjecie/".file_exists($zdj)){
-                            echo("<img src='./zdjecia/". $row['zdjecie']."' class='zdj_p'>");
-                        }else{
-                            echo("<div class='gif'><img src='./zdjecia/czekaj.gif' class='zdj_g'></div>");
-                        }
-
+    
+                                <p class='n_tag'> Nie ma takeigo tag'a w bazie</p>");
+    
                         echo("</article>");
+
                     }
-                }
-            //     $tagi++;
-            // }
+                   
             ?>
             
         </div>

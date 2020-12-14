@@ -20,7 +20,7 @@
                         ?>
                         <form action="uwierzytelnie.php" method="get">
                         <input type="hidden" name="akcja" value="wyloguj">
-                        <input class="btn2" type="submit" value="Wyloguj">
+                        <input class="btn2 dsf" type="submit" value="Wyloguj">
                     </form>
                     <?php
                         }

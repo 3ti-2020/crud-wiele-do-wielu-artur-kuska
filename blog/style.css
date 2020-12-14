@@ -204,8 +204,8 @@ p{
 }
 
 .zdj_gif{
-    height: 150px;
-    width: 300px;
+    max-height: 150px;
+    max-width: 300px;
 }
 
 .btn{
@@ -314,6 +314,16 @@ p{
 
 .lewo{
     margin: auto;
+}
+
+.sprz{
+    height: 100px;
+    width: 100px;
+}
+
+.n_tag{
+    font-size: 60px;
+    background-color: #8BB3FC;
 }
 
 @keyframes bgc {

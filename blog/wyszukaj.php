@@ -48,47 +48,101 @@
 
                 $conn = new mysqli($servername, $username, $password, $dbname);
                 $result = $conn->query("SELECT DISTINCT post.id as pid, tekst, zdjecie, tag.tag FROM `lacz` JOIN tag ON tag.id = lacz.tag JOIN post on post.id = lacz.post where tag.tag like '_".$_POST['wyszukaj']."' order by pid desc");
-               
-                while($row=$result->fetch_assoc() ){
+                $result2 = $conn->query("SELECT tag FROM tag where tag not in (SELECT tag from tag)");
+                $result3 = $conn->query("SELECT tag FROM tag");
+
+                $tagi =0;
+
+                $resultX = $conn->query("SELECT tag FROM `tag` WHERE tag like '_".$_POST['wyszukaj']."'");
+
+
+                while($row=$result3->fetch_assoc()){
+                    $tablica[$tagi] = $row['tag'];
+                    // echo($tagi." ".$tablica[$tagi]."<br>");
+                    // $tagi++;
+                // }
+
+                // $n = array(
+                // for($i=0;$i<$tagi;$i++){
+                //     echo($tablica[$i]);
+                   
+                // })
+
+                if($_POST['wyszukaj']=="" || $_POST['wyszukaj']==" " || $_POST['wyszukaj']=="a"){
 
                     echo("<article class='post'>
-                        <p class='opis'>".$row['tekst']."</p>");
-                    $res2 = $conn->query("SELECT lacz.id, post.id, post.zdjecie, tag.tag as tag FROM `lacz` JOIN tag ON tag.id = lacz.tag JOIN post on post.id = lacz.post where post.id=".$row['pid']);
+
+                            <p class='n_tag'> Nie ma takeigo tag'a w bazie</p>");
+
+                    echo("</article>");
+
+                }elseif($_POST['wyszukaj']=!""){
+                    while($row=$result->fetch_assoc() ){
+
+                        echo("<article class='post'>
+                            <p class='opis'>".$row['tekst']."</p>");
+                            $res2 = $conn->query("SELECT lacz.id, post.id, post.zdjecie, tag.tag as tag FROM `lacz` JOIN tag ON tag.id = lacz.tag JOIN post on post.id = lacz.post where post.id=".$row['pid']);
 
                         echo("<div class='o_tag'>");
                             while($row2=$res2->fetch_assoc() ){
                                 echo(" <p class='opis_tag'>".$row2['tag']."</p>");
                             }
-                            echo("</div>");
+                        echo("</div>");
 
-                            $zdj = $row['zdjecie'];
+                        $zdj = $row['zdjecie'];
 
-                            if(file_exists($zdj)){
-                                echo("<img src='". $row['zdjecie']."' class='zdj_p'>");
-                            }else{
-                                echo("<div class='gif'><img src='czekaj.gif' class='zdj_g'></div>");
-                            }
+                        if(file_exists($zdj)){
+                            echo("<img src='". $row['zdjecie']."' class='zdj_p'>");
+                        }else{
+                            echo("<div class='gif'><img src='./zdjecia/czekaj.gif' class='zdj_g'></div>");
+                        }
 
                         echo("</article>");
+                    }
                 }
+                $tagi++;
+            }
             ?>
             
         </div>
 
         <div class="pas">
 
-        <div class="menu">
-            <div class="strg">
-                 <form action="wyszukaj.php" method="post" class='form_tag'>
-                    <p class='in_t'>Wyszukaj tag:</p>
-                    <p class='in_g'>#<input type='text' name='wyszukaj'  class='in_t2'></p>
-                    <input type="submit" class='in_s' value='Wyszukaj'>
-                </form>
+            <div class="menu">
+                <div class="strg">
+                            <p class='tyt_tags'>Lista istniejących tagów</p>
+                            <div class="list_tag">
+                            <?php
+                                $result3  = $conn->query("SELECT * from tag");
+                                
+                                $n_tag= 1;
+                                while($row=$result3->fetch_assoc()){
+                                    echo("<div>".$row['tag']."</div>");
+                                    $n_tag=$n_tag+1;
+                                }
+                            ?>
 
-                <a href="index.php"><button class='in_s'>Meme oś</button></a>
+                            </div>
+                    <form action="wyszukaj.php" method="post" class='form_tag'>
+                        <p class='in_t'>Wyszukaj tag:</p>
+                        <p class='in_g'>#<input type='text' name='wyszukaj' class='in_t2'></p>
+                        <input type="submit" class='in_s' value='Wyszukaj'>
+                    </form>
+                </div>
+
             </div>
 
-        </div>
+            <div class="sponsor">
+                <p class='margines'>Sponsor strategiczny Bmemelogu:</p>
+
+                <img src='sponsor.gif' class='zdj_gif'>
+                <div class="spons">
+                <p>Pośrednictwo Ubezpieczeniowe Grzegorz Kuśka</p>
+                <p>tel: 783294001</p>
+                <p>44-190 Knurów, ul. Dworcowa 38a</p>
+            </div>
+
+            </div>
         
         </div>
 </body>

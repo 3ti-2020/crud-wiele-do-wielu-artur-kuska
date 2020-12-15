@@ -397,6 +397,23 @@ p{
         width: 200px;
         font-size: 25px;
     }
+    
+
+    .strg2{
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        position: fixed;
+    }
+
+
+    .zdj_gif{
+        max-height: 80px;
+        max-width: 100px;
+    }
 
 }
 

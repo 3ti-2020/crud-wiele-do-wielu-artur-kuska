@@ -5,6 +5,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="ikona.png">
 </head>
 <body>
 
@@ -107,7 +108,7 @@
         <div class="pas">
 
             <div class="menu">
-                <div class="strg">
+                <div class="strg strg2">
                             <p class='tyt_tags'>Lista istniejących tagów</p>
                             <div class="list_tag">
                             <?php

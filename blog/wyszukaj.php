@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bmemelog</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="ikona.png">
@@ -76,7 +76,9 @@
     
                             echo("<div class='o_tag'>");
                                 while($row2=$res2->fetch_assoc() ){
-                                    echo(" <p class='opis_tag'>".$row2['tag']."</p>");
+                                    echo("<form action='wyszukaj_tag.php' method='post' class='form_tag'>
+                                    <input type='submit' class='in_tag' name='wysz_tag' value='".$row2['tag']."'>
+                                    </form>");
                                 }
                             echo("</div>");
     

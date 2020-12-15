@@ -327,6 +327,13 @@ p{
     background-color: #8BB3FC;
 }
 
+.in_tag{
+    border: none;
+    font-size: 30px;
+    padding-left: 10px;
+    background-color: #8BB3FC;
+}
+
 @keyframes bgc {
     0%{
         background-color: #21FFF7;

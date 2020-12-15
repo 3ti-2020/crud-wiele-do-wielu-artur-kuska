@@ -32,9 +32,14 @@
 
             </div>
 
-        </div>   
+                <!-- <div class="images">
+                    <button type="button" class="btn prevBtn"><i class="fa fa-chevron-left"></i></button>
+                    <button type="button" class="btn nextBtn"><i class="fa fa-chevron-right"></i></button>
+                </div> -->
+        </div>    
 
         <div class="it blg">
+                       
             <?php
 
                 $servername = "remotemysql.com";
@@ -43,33 +48,61 @@
                 $dbname = "EItVVUd8zl";
 
                 $conn = new mysqli($servername, $username, $password, $dbname);
-                $result = $conn->query("SELECT DISTINCT post.id as pid, tekst, zdjecie FROM `lacz` JOIN tag ON tag.id = lacz.tag JOIN post on post.id = lacz.post order by pid desc");
+                $result = $conn->query("SELECT DISTINCT post.id as pid, tekst, zdjecie, tag.tag FROM `lacz` JOIN tag ON tag.id = lacz.tag JOIN post on post.id = lacz.post where tag.tag like '".$_POST['wysz_tag']."' order by pid desc");
+                $result2 = $conn->query("SELECT tag FROM tag where tag not in (SELECT tag from tag)");
+                $result3 = $conn->query("SELECT tag FROM tag");
 
-               
-                while($row=$result->fetch_assoc() ){
+                $tagi =0;
 
-                    echo("<article class='post'>
-                        <p class='opis'>".$row['tekst']."</p>");
-                    $res2 = $conn->query("SELECT lacz.id, post.id, post.zdjecie, tag.tag as tag FROM `lacz` JOIN tag ON tag.id = lacz.tag JOIN post on post.id = lacz.post where post.id=".$row['pid']);
+                $resultX = $conn->query("SELECT tag FROM `tag` WHERE tag like '_".$_POST['wysz_tag']."'");
 
-                        echo("<div class='o_tag'>");
-                            while($row2=$res2->fetch_assoc() ){
-                                echo("<form action='wyszukaj_tag.php' method='post' class='form_tag'>
-                                <input type='submit' class='in_tag' name='wysz_tag' value='".$row2['tag']."'>
-                                </form>");
-                            }
+
+                $numer=0;
+
+                while ($row=$result3->fetch_assoc()) {
+                     if($_POST['wysz_tag']==$row['tag']){
+
+                        $numer=1;
+                
+                    }
+                };
+                
+                if($numer==1){
+                    while($row=$result->fetch_assoc() ){
+    
+                            echo("<article class='post'>
+                                <p class='opis'>".$row['tekst']."</p>");
+                                $res2 = $conn->query("SELECT lacz.id, post.id, post.zdjecie, tag.tag as tag FROM `lacz` JOIN tag ON tag.id = lacz.tag JOIN post on post.id = lacz.post where post.id=".$row['pid']);
+    
+                            echo("<div class='o_tag'>");
+                                while($row2=$res2->fetch_assoc() ){
+                                    echo("<form action='wyszukaj_tag.php' method='post' class='form_tag'>
+                                    <input type='submit' class='in_tag' name='wysz_tag' value='".$row2['tag']."'>
+                                    </form>");
+                                }
                             echo("</div>");
-
+    
                             $zdj = $row['zdjecie'];
-                            
+    
                             if("./zdjecie/".file_exists($zdj)){
                                 echo("<img src='./zdjecia/". $row['zdjecie']."' class='zdj_p'>");
                             }else{
                                 echo("<div class='gif'><img src='./zdjecia/czekaj.gif' class='zdj_g'></div>");
                             }
+    
+                            echo("</article>");
 
+
+                    }}else{
+
+                        echo("<article class='post'>
+    
+                                <p class='n_tag'> Nie ma takeigo tag'a w bazie</p>");
+    
                         echo("</article>");
-                }
+
+                    }
+                   
             ?>
             
         </div>
@@ -77,7 +110,7 @@
         <div class="pas">
 
             <div class="menu">
-                <div class="strg">
+                <div class="strg strg2">
                             <p class='tyt_tags'>Lista istniejących tagów</p>
                             <div class="list_tag">
                             <?php
@@ -96,6 +129,8 @@
                         <p class='in_g'>#<input type='text' name='wyszukaj' class='in_t2'></p>
                         <input type="submit" class='in_s' value='Wyszukaj'>
                     </form>
+
+                    <a href="index.php"><button class='in_s'>Meme oś</button></a>
                 </div>
 
             </div>

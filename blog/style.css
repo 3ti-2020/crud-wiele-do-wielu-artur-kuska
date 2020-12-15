@@ -8,7 +8,7 @@
 body{
     display: grid;
     width: 100%;
-    grid-template-columns: 8fr 2fr;
+    grid-template-columns: 4fr 1fr;
     grid-template-rows: 150px 1fr;
     grid-template-areas: 
     "a a"
@@ -301,14 +301,15 @@ p{
 
 .list_tag{
     margin-top: 1rem;
-    width: 150px;
+    font-size: 25px;
+    width: 200px;
     height: 150px;
     overflow: scroll;
     margin-bottom: 2rem;
 }
 
 .tyt_tags{
-    font-size: larger;
+    font-size: 30px;
     margin-bottom: 0.5rem;
 }
 
@@ -358,6 +359,47 @@ p{
         font-size: 10px;
     }
 }
+
+@media screen and (max-width: 1800px) {
+
+    body {
+        grid-template-columns: 6fr 2fr;
+    }
+    
+
+    .menu{
+        height: 400px;
+        width: 95%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+
+    .tyt_tags{
+        font-size: large;
+    }
+    
+
+    .list_tag{
+        margin-top: 1rem;
+        font-size: large;
+        width: 150px;
+        height: 150px;
+        overflow: scroll;
+    }
+    
+
+    .in_t{
+        border-radius: 20px;
+        height: 50px;
+        width: 200px;
+        font-size: 25px;
+    }
+
+}
+
 
 /* 
         {kolory:
